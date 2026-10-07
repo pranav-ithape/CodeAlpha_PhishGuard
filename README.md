@@ -295,6 +295,7 @@ PhishGuard is built as a static Single-Page Application (SPA) and can be hosted 
 
 **Pranav Ithape**
 - **GitHub:** [@pranav-ithape](https://github.com/pranav-ithape)
+- **Repository:** [CodeAlpha_PhishGuard](https://github.com/pranav-ithape/CodeAlpha_PhishGuard)
 
 ---
 
