@@ -1,5 +1,6 @@
 # PhishGuard
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 PhishGuard is an educational phishing-awareness platform that teaches users how to recognize phishing, analyze suspicious emails and URLs, practice incident-response decisions, and assess their understanding through scenario-based training.
 
 ---
@@ -205,7 +206,7 @@ Follow these steps to run PhishGuard in a local development environment:
 ### Installation
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/pranav-ithape/CodeAlpha_PhishGuard.git
 
 # Navigate to the project directory
 cd <project-directory>
@@ -253,10 +254,10 @@ PhishGuard is built as a static Single-Page Application (SPA) and can be hosted 
 
 1. **Push Code to Git:** Push the project repository to your Git provider:
    ```bash
-   git remote add origin <repository-url>
+   git remote add origin https://github.com/pranav-ithape/CodeAlpha_PhishGuard.git
    git push -u origin main
    ```
-2. **Import Project:** In your hosting dashboard, import the repository from `<repository-url>`.
+2. **Import Project:** In your hosting dashboard, import the repository from `https://github.com/pranav-ithape/CodeAlpha_PhishGuard.git`.
 3. **Build Settings:**
    - **Framework Preset:** Vite
    - **Build Command:** `npm run build`
