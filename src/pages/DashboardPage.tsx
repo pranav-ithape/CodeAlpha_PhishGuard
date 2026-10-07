@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { TRAINING_MODULES } from '../data/modules';
-import { ModuleCard } from '../components/common/ModuleCard';
 import { useTrainingProgress } from '../hooks/useTrainingProgress';
 
 export const DashboardPage: React.FC = () => {
@@ -12,10 +10,6 @@ export const DashboardPage: React.FC = () => {
     totalModulesCount,
     overallPercentage,
     isCurriculumCompleted,
-    isModuleCompleted,
-    isModuleInProgress,
-    inFlightCount,
-    remainingCount,
     weakAreaRecommendations,
     resetProgress,
     recordVisit
@@ -61,11 +55,21 @@ export const DashboardPage: React.FC = () => {
           </span>
         </div>
         <h1 className="font-display text-display text-on-surface tracking-tight leading-tight">
-          Know what you're looking at.
+          Phishing Awareness & Cybersecurity Training
         </h1>
         <p className="font-body-lg text-body-lg text-on-surface-variant max-w-[72ch] leading-relaxed">
-          PhishGuard trains people to recognize subtle indicators of social engineering, deceptive domains, and fraudulent messaging before an incident occurs.
+          PhishGuard trains people to recognize phishing emails, deceptive websites, social engineering tactics, and fraudulent messaging before an incident occurs.
         </p>
+        <div className="flex flex-col gap-2 mt-4 text-on-surface-variant">
+          <div className="font-label-md font-semibold text-on-surface">What You'll Learn:</div>
+          <div className="flex flex-wrap gap-2">
+            <span className="font-label-sm text-label-sm px-2.5 py-1 bg-surface-container rounded border border-outline-variant text-on-surface flex items-center gap-1.5"><span className="material-symbols-outlined text-[16px] text-primary">check_circle</span> Recognize phishing emails and fake websites</span>
+            <span className="font-label-sm text-label-sm px-2.5 py-1 bg-surface-container rounded border border-outline-variant text-on-surface flex items-center gap-1.5"><span className="material-symbols-outlined text-[16px] text-primary">check_circle</span> Understand social engineering tactics</span>
+            <span className="font-label-sm text-label-sm px-2.5 py-1 bg-surface-container rounded border border-outline-variant text-on-surface flex items-center gap-1.5"><span className="material-symbols-outlined text-[16px] text-primary">check_circle</span> Analyze suspicious messages and URLs</span>
+            <span className="font-label-sm text-label-sm px-2.5 py-1 bg-surface-container rounded border border-outline-variant text-on-surface flex items-center gap-1.5"><span className="material-symbols-outlined text-[16px] text-primary">check_circle</span> Apply phishing prevention practices</span>
+            <span className="font-label-sm text-label-sm px-2.5 py-1 bg-surface-container rounded border border-outline-variant text-on-surface flex items-center gap-1.5"><span className="material-symbols-outlined text-[16px] text-primary">check_circle</span> Respond appropriately after an incident</span>
+          </div>
+        </div>
       </header>
 
       {/* Completion Banner or Continue Learning Hero Plate */}
@@ -254,50 +258,6 @@ export const DashboardPage: React.FC = () => {
         </section>
       )}
 
-      {/* Structured Course Curriculum */}
-      <section className="flex flex-col gap-y-space-md">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 pb-2 border-b border-outline-variant/40">
-          <div>
-            <h3 className="font-headline-sm text-headline-sm text-on-surface tracking-tight">
-              Curriculum Syllabus
-            </h3>
-            <p className="font-body-sm text-body-sm text-on-surface-variant">
-              Comprehensive, sequential casework organized for analytical retention.
-            </p>
-          </div>
-          <div className="flex items-center gap-4 text-outline font-label-sm text-label-sm">
-            <span className="flex items-center gap-1.5 font-medium">
-              <span className="w-2.5 h-2.5 rounded-full bg-tertiary"></span> 
-              {completedModulesCount} Completed
-            </span>
-            <span className="flex items-center gap-1.5 font-medium">
-              <span className="w-2.5 h-2.5 rounded-full bg-primary"></span> 
-              {inFlightCount} In Flight
-            </span>
-            <span className="flex items-center gap-1.5 font-medium">
-              <span className="w-2.5 h-2.5 rounded-full bg-outline-variant"></span> 
-              {remainingCount} Remaining
-            </span>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
-          {TRAINING_MODULES.map((mod) => {
-            const isCompleted = isModuleCompleted(mod.id);
-            const isInProgress = isModuleInProgress(mod.id);
-
-            return (
-              <ModuleCard
-                key={mod.id}
-                module={mod}
-                isCompleted={isCompleted}
-                isInProgress={isInProgress}
-                isLocked={false}
-              />
-            );
-          })}
-        </div>
-      </section>
 
       {/* Educational Practice & Key Takeaways Row (7:5 Split) */}
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">

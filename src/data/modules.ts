@@ -153,7 +153,7 @@ export const TRAINING_MODULES: TrainingModule[] = [
       '10 Scenario-Based Evaluative Questions',
       'Header, Domain, and Emotional Pressure Diagnosis',
       'Detailed Corrective Explanations & Rationale',
-      'Mastery Scoring & Retention Benchmark'
+      'Assessment Score & Retention Benchmark'
     ],
     route: '/quiz',
     isAvailable: true,

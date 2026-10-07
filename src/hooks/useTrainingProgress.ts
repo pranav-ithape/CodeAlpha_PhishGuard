@@ -180,14 +180,33 @@ export function computeWeakAreaRecommendations(missedQuestionIds: string[]): Wea
 export function useTrainingProgress() {
   const [progress, setProgress] = useState<UserProgress>(loadStoredProgress);
 
-  // Synchronize state changes to localStorage
+  // Synchronize state changes to localStorage and across components
   useEffect(() => {
     try {
-      localStorage.setItem(PROGRESS_STORAGE_KEY, JSON.stringify(progress));
+      const current = localStorage.getItem(PROGRESS_STORAGE_KEY);
+      const next = JSON.stringify(progress);
+      if (current !== next) {
+        localStorage.setItem(PROGRESS_STORAGE_KEY, next);
+        window.dispatchEvent(new Event('phishguard-progress-updated'));
+      }
     } catch (e) {
       console.error('Failed to save progress to localStorage', e);
     }
   }, [progress]);
+
+  // Sync state when localStorage changes or other components dispatch updates
+  useEffect(() => {
+    const handleSync = () => {
+      setProgress(loadStoredProgress());
+    };
+    window.addEventListener('storage', handleSync);
+    window.addEventListener('phishguard-progress-updated', handleSync);
+    
+    return () => {
+      window.removeEventListener('storage', handleSync);
+      window.removeEventListener('phishguard-progress-updated', handleSync);
+    };
+  }, []);
 
   const recordVisit = useCallback((route: string, moduleId?: string) => {
     setProgress((prev) => {
@@ -275,6 +294,7 @@ export function useTrainingProgress() {
     setProgress(defaultProgress);
     try {
       localStorage.removeItem(PROGRESS_STORAGE_KEY);
+      window.dispatchEvent(new Event('phishguard-progress-updated'));
     } catch (e) {
       console.error('Failed to reset progress in localStorage', e);
     }

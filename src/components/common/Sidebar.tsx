@@ -14,14 +14,14 @@ export const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onCloseMobile }) =
     {
       label: 'General',
       items: [
-        { name: 'Dashboard & Modules', path: '/dashboard', icon: 'grid_view' },
+        { name: 'Dashboard', path: '/dashboard', icon: 'grid_view' },
       ],
     },
     {
       label: 'Educational Modules',
       items: [
-        { name: 'Course Curriculum', path: '/learn', icon: 'auto_stories' },
-        { name: 'Case Studies Archive', path: '/examples', icon: 'history_edu' },
+        { name: 'Modules', path: '/learn', icon: 'auto_stories' },
+        { name: 'Real-World Case Studies', path: '/examples', icon: 'history_edu' },
       ],
     },
     {
@@ -34,7 +34,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onCloseMobile }) =
     {
       label: 'Evaluation & Response',
       items: [
-        { name: 'Knowledge Assessment', path: '/quiz', icon: 'fact_check' },
+        { name: 'Interactive Assessment', path: '/quiz', icon: 'fact_check' },
         { name: 'Incident Response Guide', path: '/incident-response', icon: 'shield' },
         { name: 'Prevention Guidelines', path: '/prevention', icon: 'lock' },
       ],

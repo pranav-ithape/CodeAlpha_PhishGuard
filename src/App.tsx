@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { RootLayout } from './layouts/RootLayout';
 import { DashboardPage } from './pages/DashboardPage';
 import { LearnPage } from './pages/LearnPage';
@@ -10,14 +10,13 @@ import { QuizPage } from './pages/QuizPage';
 import { PreventionPage } from './pages/PreventionPage';
 import { IncidentResponsePage } from './pages/IncidentResponsePage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { LandingPage } from './pages/LandingPage';
 
 export function App() {
   return (
     <Routes>
-      <Route path="/" element={<RootLayout />}>
-        {/* Default route redirect to dashboard */}
-        <Route index element={<Navigate to="/dashboard" replace />} />
-        
+      <Route path="/" element={<LandingPage />} />
+      <Route element={<RootLayout />}>
         {/* Core application routes */}
         <Route path="dashboard" element={<DashboardPage />} />
         

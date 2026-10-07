@@ -64,16 +64,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobile }) => {
         {/* Theme Toggle */}
         <ThemeToggle />
 
-        {/* Trainee Profile Badge */}
-        <div className="hidden sm:flex items-center gap-space-sm pl-2 border-l border-outline-variant">
-          <div className="flex flex-col text-right">
-            <span className="font-label-md text-label-md text-on-surface font-semibold leading-tight">Learner Session</span>
-            <span className="font-label-sm text-label-sm text-on-surface-variant">Security Training</span>
-          </div>
-          <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
-            <span className="material-symbols-outlined text-on-primary text-[18px]">person</span>
-          </div>
-        </div>
       </div>
     </header>
   );
