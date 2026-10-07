@@ -16,7 +16,7 @@ export const LandingPage: React.FC = () => {
       <header className="sticky top-0 z-40 w-full h-16 shrink-0 bg-surface-container-low border-b border-outline-variant flex items-center justify-between px-space-lg shadow-xs">
         <div className="flex items-center gap-space-md">
           <div className="flex items-center gap-2">
-            <PhishGuardLogo size={32} />
+            <PhishGuardLogo size={44} />
           </div>
         </div>
         <div className="flex items-center gap-space-md">

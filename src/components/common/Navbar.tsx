@@ -26,7 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobile }) => {
 
         {/* Mobile brand text */}
         <Link to="/dashboard" className="lg:hidden flex items-center gap-2">
-          <PhishGuardLogo size={28} />
+          <PhishGuardLogo size={36} />
         </Link>
 
         {/* Desktop Brand / Educational Badge */}

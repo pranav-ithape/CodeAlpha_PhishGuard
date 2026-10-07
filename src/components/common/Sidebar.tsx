@@ -47,7 +47,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ mobileOpen, onCloseMobile }) =
         {/* Brand Header */}
         <div className="px-space-lg pb-4 border-b border-outline-variant flex items-center justify-between">
           <Link to="/dashboard" onClick={onCloseMobile} className="focus:outline-none">
-            <PhishGuardLogo size={32} />
+            <PhishGuardLogo size={44} />
           </Link>
           {onCloseMobile && (
             <button
