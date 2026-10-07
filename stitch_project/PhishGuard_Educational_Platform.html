@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-primary-container": "#b2e9e5", "on-error": "#ffffff", "outline": "#707978", "surface-bright": "#fbf9f7", "secondary-container": "#fead96", "tertiary-fixed": "#cbead1", "on-tertiary-fixed": "#062011", "on-surface": "#1b1c1b", "outline-variant": "#bfc8c7", "on-secondary-fixed": "#380d02", "surface-variant": "#e3e2e0", "surface-container-high": "#e9e8e6", "error": "#ba1a1a", "surface-tint": "#316764", "on-tertiary": "#ffffff", "surface-container-lowest": "#ffffff", "inverse-on-surface": "#f2f0ee", "on-tertiary-fixed-variant": "#324d3a", "on-primary-fixed": "#00201f", "tertiary-container": "#4d6954", "surface": "#fbf9f7", "surface-container-highest": "#e3e2e0", "on-surface-variant": "#404848", "on-tertiary-container": "#c8e7cd", "inverse-primary": "#9ad1cd", "surface-container": "#efeeec", "tertiary-fixed-dim": "#b0ceb5", "on-secondary-container": "#793e2d", "on-primary-fixed-variant": "#144f4c", "on-secondary-fixed-variant": "#6f3726", "primary-fixed-dim": "#9ad1cd", "surface-container-low": "#f5f3f1", "on-background": "#1b1c1b", "secondary-fixed": "#ffdbd1", "surface-dim": "#dbdad8", "background": "#fbf9f7", "primary": "#195350", "on-primary": "#ffffff", "tertiary": "#36513e", "on-error-container": "#93000a", "secondary-fixed-dim": "#ffb59f", "inverse-surface": "#30312f", "primary-container": "#356b68", "primary-fixed": "#b5ede9", "secondary": "#8c4e3b" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xs": "0.25rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "gutter": "1.5rem", "margin": "2.5rem", "space-md": "1rem", "margin-mobile": "1.25rem" }, "fontFamily": { "title": [ "Public Sans" ], "code": [ "JetBrains Mono" ], "headline-lg-mobile": [ "Public Sans" ], "headline-md": [ "Public Sans" ], "body-sm": [ "Public Sans" ], "headline-lg": [ "Public Sans" ], "headline-sm": [ "Public Sans" ], "body-lg": [ "Public Sans" ], "label-md": [ "Public Sans" ], "display": [ "Public Sans" ], "label-sm": [ "Public Sans" ], "display-mobile": [ "Public Sans" ], "body-md": [ "Public Sans" ] }, "fontSize": { "title": [ "18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" } ], "code": [ "13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-lg-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-sm": [ "14px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "30px", "letterSpacing": "0.005em", "fontWeight": "400" } ], "label-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "display": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" } ], "display-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "body-md": [ "16px", { "lineHeight": "26px", "letterSpacing": "0.005em", "fontWeight": "400" } ] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-high border-r border-outline-variant z-50 flex flex-col justify-between pt-5 pb-5"><div class="flex flex-col"><div class="px-space-lg pb-4 border-b border-outline-variant flex items-center gap-space-sm"><img alt="PhishGuard Readability-First Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UAKMXiF77s20r7Xl7xn5lXhdq6GmQmQFCDbV-vvG4ABIebkvbvOIInNdk2vt0pwLhsaWiGwlqOrx231HHLEdmJvWv5wVSrs_Q5JsSKk7NimCWExE-2n_xqOZXXAVixA5h1Uj3cOJbK9w9441j8WVBd8AgIko9bcGx__IbH3ywhR8FPFpK2YBoIWEhqx-E3TV9manowFD1PvyYAx6BPjUcOIYlEgO-Amv4hj651-03TTz4XMQwXurbl9fCk"/><div class="flex flex-col"><span class="font-title text-title text-primary tracking-tight leading-none">PhishGuard</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-1">Educational Suite</span></div></div><nav class="flex flex-col gap-y-1 px-space-sm mt-space-md" data-active-classes="bg-surface-container-lowest text-on-surface font-title border-l-4 border-primary shadow-sm"><div class="px-space-md pt-2 pb-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">General</span></div><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="dashboard-and-modules" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard &amp; Modules</span></a><div class="px-space-md pt-space-sm pb-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Educational Modules</span></div><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="course-curriculum" href="#"><span class="material-symbols-outlined text-[20px]">auto_stories</span><span>Course Curriculum</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="case-studies-archive" href="#"><span class="material-symbols-outlined text-[20px]">history_edu</span><span>Case Studies Archive</span></a><div class="px-space-md pt-space-sm pb-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Interactive Labs</span></div><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="email-inspector" href="#"><span class="material-symbols-outlined text-[20px]">mark_email_unread</span><span>Email Inspector</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="url-and-domain-lab" href="#"><span class="material-symbols-outlined text-[20px]">link</span><span>URL &amp; Domain Lab</span></a><div class="px-space-md pt-space-sm pb-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Evaluation &amp; Response</span></div><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="knowledge-assessment" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span>Knowledge Assessment</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="incident-response-guide" href="#"><span class="material-symbols-outlined text-[20px]">shield</span><span>Incident Response Guide</span></a></nav></div><div class="px-space-lg pt-4 border-t border-outline-variant flex flex-col gap-1"><span class="font-label-sm text-label-sm text-on-surface-variant">PhishGuard Education v2.4</span><span class="font-label-sm text-label-sm text-outline">Readability-First Security Archival</span></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-low border-b border-outline-variant z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><img alt="PhishGuard Readability-First Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UAKMXiF77s20r7Xl7xn5lXhdq6GmQmQFCDbV-vvG4ABIebkvbvOIInNdk2vt0pwLhsaWiGwlqOrx231HHLEdmJvWv5wVSrs_Q5JsSKk7NimCWExE-2n_xqOZXXAVixA5h1Uj3cOJbK9w9441j8WVBd8AgIko9bcGx__IbH3ywhR8FPFpK2YBoIWEhqx-E3TV9manowFD1PvyYAx6BPjUcOIYlEgO-Amv4hj651-03TTz4XMQwXurbl9fCk"/><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest border border-outline-variant px-2 py-0.5 rounded">Educational Learning Suite</span></div><div class="flex items-center gap-space-lg"><div class="hidden lg:flex items-center gap-space-sm"><span class="font-label-md text-label-md text-on-surface-variant">Curriculum: 68% Completed</span><div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden"><div class="w-[68%] h-full bg-primary rounded-full"></div></div></div><button class="flex items-center gap-1.5 px-3 py-1.5 rounded border border-secondary text-secondary hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-colors font-label-md text-label-md"><span class="material-symbols-outlined text-[16px]">flag</span><span>Report Suspicious Email</span></button><div class="flex items-center gap-space-sm pl-2 border-l border-outline-variant"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold">Alex Vance</span><span class="font-label-sm text-label-sm text-on-surface-variant">Security Trainee</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen px-space-lg py-space-xl"><div class="flex flex-col w-full max-w-[1240px] mx-auto gap-y-space-xl">
+<!-- Editorial Header -->
+<header class="flex flex-col gap-y-3 max-w-[800px]">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">
+        Cybersecurity Education &amp; Awareness
+      </span>
+</div>
+<h1 class="font-display text-display text-on-surface tracking-tight leading-tight">
+      Know what you're looking at.
+    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[72ch] leading-relaxed">
+      PhishGuard trains people to recognize subtle indicators of social engineering, deceptive domains, and fraudulent messaging before an incident occurs.
+    </p>
+</header>
+<!-- Continue Learning Hero Plate -->
+<section class="w-full bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-y-2 max-w-2xl">
+<div class="flex flex-wrap items-center gap-3">
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2.5 py-1 rounded">
+          In Progress · Step 4 of 9
+        </span>
+<span class="font-code text-code text-outline flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+          12 mins remaining
+        </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface tracking-tight">
+        Module 04: Fake Websites &amp; Deceptive URLs
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Analyze lookalike domains, punycode spoofing, and rogue authorization portals crafted to emulate internal enterprise services.
+      </p>
+<div class="flex items-center gap-3 pt-2">
+<div class="w-48 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="w-[68%] h-full bg-primary rounded-full"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline">
+          6 of 9 modules finalized (68% syllabus completed)
+        </span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row md:flex-col items-stretch sm:items-center md:items-end gap-3 w-full md:w-auto shrink-0">
+<button class="bg-primary hover:bg-primary-container text-on-primary font-title text-title px-6 py-3 rounded transition-colors flex items-center justify-center gap-2 shadow-sm text-center">
+<span>Continue Lesson</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<span class="font-label-sm text-label-sm text-outline text-center md:text-right">
+        Auto-saved 14 minutes ago
+      </span>
+</div>
+</section>
+<!-- Structured Course Curriculum -->
+<section class="flex flex-col gap-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 pb-2">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+          Curriculum Syllabus
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Comprehensive, sequential casework organized for analytical retention.
+        </p>
+</div>
+<div class="flex items-center gap-4 text-outline font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span> 3 Completed</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-primary"></span> 1 In Flight</span>
+<span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-outline-variant"></span> 5 Remaining</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Mod 01 -->
+<article class="bg-surface-container-lowest rounded-lg p-space-md flex flex-col justify-between shadow-sm hover:shadow transition-shadow">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code text-code text-outline font-medium">MOD.01</span>
+<span class="bg-tertiary/10 text-tertiary font-label-sm text-label-sm px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Completed
+            </span>
+</div>
+<h4 class="font-title text-title text-on-surface leading-snug">
+            Phishing Fundamentals
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+            The core architecture of asynchronous deception, payload vectors, and threat actors' return-on-investment logic.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm bg-transparent">
+<span class="font-code text-code text-outline">15 min · Theory</span>
+<button class="font-label-md text-label-md text-primary hover:text-primary-container font-semibold transition-colors">
+            Review Notes →
+          </button>
+</div>
+</article>
+<!-- Mod 02 -->
+<article class="bg-surface-container-lowest rounded-lg p-space-md flex flex-col justify-between shadow-sm hover:shadow transition-shadow">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code text-code text-outline font-medium">MOD.02</span>
+<span class="bg-tertiary/10 text-tertiary font-label-sm text-label-sm px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Completed
+            </span>
+</div>
+<h4 class="font-title text-title text-on-surface leading-snug">
+            Types: Spear, Whaling, Smishing
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+            Taxonomy of bespoke operations targeted at executives, mobile shortcodes, and vendor invoicing channels.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm bg-transparent">
+<span class="font-code text-code text-outline">20 min · Taxonomies</span>
+<button class="font-label-md text-label-md text-primary hover:text-primary-container font-semibold transition-colors">
+            Review Notes →
+          </button>
+</div>
+</article>
+<!-- Mod 03 -->
+<article class="bg-surface-container-lowest rounded-lg p-space-md flex flex-col justify-between shadow-sm hover:shadow transition-shadow">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code text-code text-outline font-medium">MOD.03</span>
+<span class="bg-tertiary/10 text-tertiary font-label-sm text-label-sm px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Completed
+            </span>
+</div>
+<h4 class="font-title text-title text-on-surface leading-snug">
+            Emails &amp; Header Inspection
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+            Dissecting RFC-822 envelopes, mismatched Return-Path declarations, and spoofed display names.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm bg-transparent">
+<span class="font-code text-code text-outline">25 min · Technical</span>
+<button class="font-label-md text-label-md text-primary hover:text-primary-container font-semibold transition-colors">
+            Review Notes →
+          </button>
+</div>
+</article>
+<!-- Mod 04 (Current Active) -->
+<article class="bg-surface-container-lowest rounded-lg p-space-md flex flex-col justify-between shadow-md relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary"></div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code text-code text-primary font-bold">MOD.04</span>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2 py-0.5 rounded font-semibold">
+              In Progress
+            </span>
+</div>
+<h4 class="font-title text-title text-on-surface leading-snug">
+            Fake Websites &amp; Deceptive URLs
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+            Character obfuscation, punycode IDN homographs, and illegitimate domain structures deployed in credential harvesting.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm bg-transparent">
+<span class="font-code text-code text-outline">25 min · Active</span>
+<button class="bg-primary text-on-primary px-3 py-1 rounded font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors">
+            Resume
+          </button>
+</div>
+</article>
+<!-- Mod 05 -->
+<article class="bg-surface-container-lowest rounded-lg p-space-md flex flex-col justify-between shadow-sm hover:shadow transition-shadow">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code text-code text-outline font-medium">MOD.05</span>
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded">
+              Ready
+            </span>
+</div>
+<h4 class="font-title text-title text-on-surface leading-snug">
+            Cognitive Biases &amp; Triggers
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+            Urgency cues, manufactured authority, reciprocal debt, and emotional disruption mechanisms.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm bg-transparent">
+<span class="font-code text-code text-outline">25 min · Behavioral</span>
+<button class="font-label-md text-label-md text-primary hover:text-primary-container font-semibold transition-colors">
+            Begin Lesson →
+          </button>
+</div>
+</article>
+<!-- Mod 06 -->
+<article class="bg-surface-container-lowest rounded-lg p-space-md flex flex-col justify-between shadow-sm hover:shadow transition-shadow">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code text-code text-outline font-medium">MOD.06</span>
+<span class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-0.5 rounded">
+              Ready
+            </span>
+</div>
+<h4 class="font-title text-title text-on-surface leading-snug">
+            Real-World Case Post-Mortems
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+            Chronological breakdowns of high-profile institutional breaches initiated through single-click phishing compromise.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm bg-transparent">
+<span class="font-code text-code text-outline">35 min · Forensics</span>
+<button class="font-label-md text-label-md text-primary hover:text-primary-container font-semibold transition-colors">
+            Begin Lesson →
+          </button>
+</div>
+</article>
+<!-- Mod 07 -->
+<article class="bg-surface-container-low rounded-lg p-space-md flex flex-col justify-between opacity-85">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code text-code text-outline font-medium">MOD.07</span>
+<span class="bg-surface-container text-outline font-label-sm text-label-sm px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">lock</span> Locked
+            </span>
+</div>
+<h4 class="font-title text-title text-on-surface-variant leading-snug">
+            SPF, DKIM &amp; Passkeys
+          </h4>
+<p class="font-body-sm text-body-sm text-outline line-clamp-2">
+            DNS authentication records, cryptographically signed sender validation, and FIDO2 passwordless defense.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm bg-transparent">
+<span class="font-code text-code text-outline">20 min · Prereq Mod 04</span>
+<span class="material-symbols-outlined text-outline text-[18px]">lock</span>
+</div>
+</article>
+<!-- Mod 08 -->
+<article class="bg-surface-container-low rounded-lg p-space-md flex flex-col justify-between opacity-85">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code text-code text-outline font-medium">MOD.08</span>
+<span class="bg-surface-container text-outline font-label-sm text-label-sm px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">lock</span> Locked
+            </span>
+</div>
+<h4 class="font-title text-title text-on-surface-variant leading-snug">
+            Incident Response &amp; Containment
+          </h4>
+<p class="font-body-sm text-body-sm text-outline line-clamp-2">
+            The immediate 15-minute containment sequence following suspected credential entry or suspicious payload execution.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm bg-transparent">
+<span class="font-code text-code text-outline">25 min · Protocol</span>
+<span class="material-symbols-outlined text-outline text-[18px]">lock</span>
+</div>
+</article>
+<!-- Mod 09 -->
+<article class="bg-surface-container-low rounded-lg p-space-md flex flex-col justify-between opacity-85">
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-code text-code text-outline font-medium">MOD.09</span>
+<span class="bg-surface-container text-outline font-label-sm text-label-sm px-2 py-0.5 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">lock</span> Locked
+            </span>
+</div>
+<h4 class="font-title text-title text-on-surface-variant leading-snug">
+            Final Competency Assessment
+          </h4>
+<p class="font-body-sm text-body-sm text-outline line-clamp-2">
+            Evaluative scenario testing across 20 synthetic email, messaging, and multi-factor authentication challenges.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-md mt-space-sm bg-transparent">
+<span class="font-code text-code text-outline">45 min · Examination</span>
+<span class="material-symbols-outlined text-outline text-[18px]">lock</span>
+</div>
+</article>
+</div>
+</section>
+<!-- Educational Practice & Key Takeaways Row (2 columns) -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Interactive Practice Labs (7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-y-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+          Interactive Practice Labs
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Applied analytical environments with sanitized real-world artifacts.
+        </p>
+</div>
+<div class="flex flex-col gap-y-space-sm h-full justify-between">
+<!-- Lab A -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">mark_email_unread</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title text-title text-on-surface">Email Red-Flag Inspector</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Examine realistic employee emails and identify deceptive markers in header fields, body copy, and signature blocks.
+              </p>
+<div class="flex items-center gap-3 mt-2 font-code text-code text-outline">
+<span>12 active cases</span>
+<span>·</span>
+<span>Avg: 6m per review</span>
+</div>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold px-4 py-2 rounded shrink-0 transition-colors shadow-sm w-full sm:w-auto">
+            Open Email Lab
+          </button>
+</div>
+<!-- Lab B -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">link</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title text-title text-on-surface">URL &amp; Domain Deconstructor</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Dissect deceptive hyperlinks down to RFC-compliant root domains, subdomains, and obfuscated redirect paths.
+              </p>
+<div class="flex items-center gap-3 mt-2 font-code text-code text-outline">
+<span>Interactive sandbox</span>
+<span>·</span>
+<span>Unicode decoder</span>
+</div>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-semibold px-4 py-2 rounded shrink-0 transition-colors shadow-sm w-full sm:w-auto">
+            Open Domain Lab
+          </button>
+</div>
+</div>
+</div>
+<!-- Right Column: Weekly Security Concept (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-y-space-md">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">
+          Weekly Security Concept
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Core mental model for fast-paced digital communications.
+        </p>
+</div>
+<!-- Key Takeaway Callout Box with Burnt Copper Accent -->
+<aside class="bg-surface-container rounded-lg p-space-md border-l-4 border-secondary flex flex-col justify-between h-full gap-y-4">
+<div class="flex flex-col gap-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">lightbulb</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">
+              The Golden Rule of URLs
+            </span>
+</div>
+<h4 class="font-title text-title text-on-surface">
+            Always inspect the first single forward slash (/)
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            The authentic domain host is always the segment immediately to the left of the very first single slash after the protocol. Subdomains before it can be named anything an attacker chooses.
+          </p>
+<!-- Visual anatomical diagram of a URL -->
+<div class="bg-surface-container-high rounded p-3 font-code text-code overflow-x-auto text-on-surface">
+<div class="text-outline text-[11px] mb-1">URL ANATOMY BREAKDOWN</div>
+<div class="whitespace-nowrap">
+<span class="text-outline">https://</span><span class="text-secondary font-bold">login.company.com.attacker.org</span><span class="bg-secondary/20 text-secondary font-bold px-1 rounded">/</span><span class="text-outline">portal/auth</span>
+</div>
+<div class="text-[11px] text-secondary mt-1 font-sans">
+              ↑ Actual destination host is <strong>attacker.org</strong>, not login.company.com
+            </div>
+</div>
+</div>
+<div class="bg-surface-container-lowest/80 rounded p-3 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">verified_user</span>
+<p class="font-body-sm text-body-sm text-on-surface leading-snug">
+<strong>Practical tip:</strong> Never trust padlock icons alone—over 80% of active phishing sites now carry valid free TLS certificates.
+          </p>
+</div>
+</aside>
+</div>
+</section>
+<!-- Editorial Resource & Archival Footer Note -->
+<footer class="bg-surface-container-low rounded-lg p-space-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">school</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Trainee Progress Dossier: Alex Vance</span>
+<span class="font-body-sm text-body-sm text-outline">Active Track: Enterprise Baseline Defense (Cohort 2025-Q1)</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container-lowest hover:bg-surface-container font-label-md text-label-md text-on-surface px-3 py-1.5 rounded transition-colors shadow-sm">
+        Download PDF Field Guide
+      </button>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-3 py-1.5 rounded transition-colors shadow-sm">
+        Report Questionable Case
+      </button>
+</div>
+</footer>
+</div></main></div></body></html>

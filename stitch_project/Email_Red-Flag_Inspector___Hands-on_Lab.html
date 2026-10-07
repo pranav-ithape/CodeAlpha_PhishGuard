@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-primary-container": "#b2e9e5", "on-error": "#ffffff", "outline": "#707978", "surface-bright": "#fbf9f7", "secondary-container": "#fead96", "tertiary-fixed": "#cbead1", "on-tertiary-fixed": "#062011", "on-surface": "#1b1c1b", "outline-variant": "#bfc8c7", "on-secondary-fixed": "#380d02", "surface-variant": "#e3e2e0", "surface-container-high": "#e9e8e6", "error": "#ba1a1a", "surface-tint": "#316764", "on-tertiary": "#ffffff", "surface-container-lowest": "#ffffff", "inverse-on-surface": "#f2f0ee", "on-tertiary-fixed-variant": "#324d3a", "on-primary-fixed": "#00201f", "tertiary-container": "#4d6954", "surface": "#fbf9f7", "surface-container-highest": "#e3e2e0", "on-surface-variant": "#404848", "on-tertiary-container": "#c8e7cd", "inverse-primary": "#9ad1cd", "surface-container": "#efeeec", "tertiary-fixed-dim": "#b0ceb5", "on-secondary-container": "#793e2d", "on-primary-fixed-variant": "#144f4c", "on-secondary-fixed-variant": "#6f3726", "primary-fixed-dim": "#9ad1cd", "surface-container-low": "#f5f3f1", "on-background": "#1b1c1b", "secondary-fixed": "#ffdbd1", "surface-dim": "#dbdad8", "background": "#fbf9f7", "primary": "#195350", "on-primary": "#ffffff", "tertiary": "#36513e", "on-error-container": "#93000a", "secondary-fixed-dim": "#ffb59f", "inverse-surface": "#30312f", "primary-container": "#356b68", "primary-fixed": "#b5ede9", "secondary": "#8c4e3b" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xs": "0.25rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "gutter": "1.5rem", "margin": "2.5rem", "space-md": "1rem", "margin-mobile": "1.25rem" }, "fontFamily": { "title": [ "Public Sans" ], "code": [ "JetBrains Mono" ], "headline-lg-mobile": [ "Public Sans" ], "headline-md": [ "Public Sans" ], "body-sm": [ "Public Sans" ], "headline-lg": [ "Public Sans" ], "headline-sm": [ "Public Sans" ], "body-lg": [ "Public Sans" ], "label-md": [ "Public Sans" ], "display": [ "Public Sans" ], "label-sm": [ "Public Sans" ], "display-mobile": [ "Public Sans" ], "body-md": [ "Public Sans" ] }, "fontSize": { "title": [ "18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" } ], "code": [ "13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-lg-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-sm": [ "14px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "30px", "letterSpacing": "0.005em", "fontWeight": "400" } ], "label-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "display": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" } ], "display-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "body-md": [ "16px", { "lineHeight": "26px", "letterSpacing": "0.005em", "fontWeight": "400" } ] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-high border-r border-outline-variant z-50 flex flex-col justify-between pt-5 pb-5"><div class="flex flex-col"><div class="px-space-lg pb-4 border-b border-outline-variant flex items-center gap-space-sm"><img alt="PhishGuard Readability-First Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UAKMXiF77s20r7Xl7xn5lXhdq6GmQmQFCDbV-vvG4ABIebkvbvOIInNdk2vt0pwLhsaWiGwlqOrx231HHLEdmJvWv5wVSrs_Q5JsSKk7NimCWExE-2n_xqOZXXAVixA5h1Uj3cOJbK9w9441j8WVBd8AgIko9bcGx__IbH3ywhR8FPFpK2YBoIWEhqx-E3TV9manowFD1PvyYAx6BPjUcOIYlEgO-Amv4hj651-03TTz4XMQwXurbl9fCk"/><div class="flex flex-col"><span class="font-title text-title text-primary tracking-tight leading-none">PhishGuard</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-1">Educational Suite</span></div></div><nav class="flex flex-col gap-y-1 px-space-sm mt-space-md" data-active-classes="bg-surface-container-lowest text-on-surface font-title border-l-4 border-primary shadow-sm"><div class="px-space-md pt-2 pb-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">General</span></div><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="dashboard-and-modules" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard &amp; Modules</span></a><div class="px-space-md pt-space-sm pb-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Educational Modules</span></div><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="course-curriculum" href="#"><span class="material-symbols-outlined text-[20px]">auto_stories</span><span>Course Curriculum</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="case-studies-archive" href="#"><span class="material-symbols-outlined text-[20px]">history_edu</span><span>Case Studies Archive</span></a><div class="px-space-md pt-space-sm pb-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Interactive Labs</span></div><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2 rounded transition-colors bg-surface-container-lowest text-on-surface font-title border-l-4 border-primary shadow-sm" data-path="email-inspector" href="#"><span class="material-symbols-outlined text-[20px]">mark_email_unread</span><span>Email Inspector</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="url-and-domain-lab" href="#"><span class="material-symbols-outlined text-[20px]">link</span><span>URL &amp; Domain Lab</span></a><div class="px-space-md pt-space-sm pb-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Evaluation &amp; Response</span></div><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="knowledge-assessment" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span>Knowledge Assessment</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="incident-response-guide" href="#"><span class="material-symbols-outlined text-[20px]">shield</span><span>Incident Response Guide</span></a></nav></div><div class="px-space-lg pt-4 border-t border-outline-variant flex flex-col gap-1"><span class="font-label-sm text-label-sm text-on-surface-variant">PhishGuard Education v2.4</span><span class="font-label-sm text-label-sm text-outline">Readability-First Security Archival</span></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-low border-b border-outline-variant z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><img alt="PhishGuard Readability-First Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UAKMXiF77s20r7Xl7xn5lXhdq6GmQmQFCDbV-vvG4ABIebkvbvOIInNdk2vt0pwLhsaWiGwlqOrx231HHLEdmJvWv5wVSrs_Q5JsSKk7NimCWExE-2n_xqOZXXAVixA5h1Uj3cOJbK9w9441j8WVBd8AgIko9bcGx__IbH3ywhR8FPFpK2YBoIWEhqx-E3TV9manowFD1PvyYAx6BPjUcOIYlEgO-Amv4hj651-03TTz4XMQwXurbl9fCk"/><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest border border-outline-variant px-2 py-0.5 rounded">Educational Learning Suite</span></div><div class="flex items-center gap-space-lg"><div class="hidden lg:flex items-center gap-space-sm"><span class="font-label-md text-label-md text-on-surface-variant">Curriculum: 68% Completed</span><div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden"><div class="w-[68%] h-full bg-primary rounded-full"></div></div></div><button class="flex items-center gap-1.5 px-3 py-1.5 rounded border border-secondary text-secondary hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-colors font-label-md text-label-md"><span class="material-symbols-outlined text-[16px]">flag</span><span>Report Suspicious Email</span></button><div class="flex items-center gap-space-sm pl-2 border-l border-outline-variant"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold">Alex Vance</span><span class="font-label-sm text-label-sm text-on-surface-variant">Security Trainee</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen px-space-lg py-space-xl"><div class="flex flex-col w-full">
+<!-- Top Forensic Lab Context Bar -->
+<div class="w-full bg-surface-container-low rounded-xl p-space-md mb-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-sm shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[22px]">biotech</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Laboratory Simulation · Unit 04</span>
+<span class="text-outline-variant font-code text-code">/</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Artifact #EX-2024-8841</span>
+</div>
+<span class="font-title text-title text-on-surface">Interactive Email Red-Flag Inspector</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-1.5 px-3 py-1 bg-surface-container-lowest rounded text-on-surface-variant font-label-md text-label-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Scenario: Mandated Payroll Verification</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">school</span>
+<span>Mode: Guided Forensics</span>
+</div>
+</div>
+</div>
+<!-- Primary Asymmetric Two-Column Investigation Layout (7:5 Split) -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Simulated Corporate Email Inspection Area (7 Cols) -->
+<div class="xl:col-span-7 flex flex-col gap-space-md">
+<!-- Email Container Card -->
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-sm flex flex-col overflow-hidden">
+<!-- Viewer Control Strip -->
+<div class="bg-surface-container-low px-space-lg py-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">inbox</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Client Mail Payload Viewer</span>
+<span class="font-code text-code text-on-surface-variant px-2 py-0.5 bg-surface-container rounded">RFC-5322</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface bg-surface-container hover:bg-surface-container-high rounded transition-colors font-label-sm text-label-sm flex items-center gap-1" id="toggle-headers-btn" onclick="toggleRawHeaders()">
+<span class="material-symbols-outlined text-[15px]">code</span>
+<span>Raw RFC 822</span>
+</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface bg-surface-container hover:bg-surface-container-high rounded transition-colors font-label-sm text-label-sm flex items-center gap-1" onclick="resetLab()">
+<span class="material-symbols-outlined text-[15px]">refresh</span>
+<span>Reset State</span>
+</button>
+</div>
+</div>
+<!-- Raw RFC Headers Drawer (Expandable) -->
+<div class="hidden bg-surface-container-highest p-space-md font-code text-code text-on-surface" id="raw-headers-pane">
+<div class="flex items-center justify-between pb-2 mb-2">
+<span class="font-label-sm text-label-sm font-semibold uppercase text-on-surface-variant">Raw MIME Transport Excerpt</span>
+<span class="text-label-sm text-outline">Decoded via MTA Inbound</span>
+</div>
+<pre class="overflow-x-auto whitespace-pre leading-relaxed text-body-sm text-on-surface">Received: from mailer-cdn38.biz (mailer-cdn38.biz [198.51.100.44])
+  by mx01.acmecorp-internal.net with ESMTP id 8802FA891C
+  for &lt;a.vance@acmecorp-internal.net&gt;; Thu, 12 Oct 2024 14:18:22 -0500
+Return-Path: &lt;bounces@mailer-cdn38.biz&gt;
+Authentication-Results: mx01.acmecorp-internal.net;
+  spf=fail (sender IP 198.51.100.44 is not authorized by payroII-update-internal.com);
+  dkim=none (no signature found);
+  dmarc=quarantine (p=quarantine dis=reject_policy_override)
+Message-ID: &lt;20241012191822.4B929@mailer-cdn38.biz&gt;
+From: "IT Service Desk" &lt;support@payroII-update-internal.com&gt;
+Subject: [URGENT] Action Required: Mandated Q3 Direct Deposit Re-Verification by 17:00 EST</pre>
+</div>
+<!-- Structured Metadata Header Section -->
+<div class="p-space-lg bg-surface-container-lowest flex flex-col gap-3">
+<!-- FROM Line with Homoglyph Badge [1] -->
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-1">
+<div class="flex items-baseline gap-space-sm flex-wrap">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline w-24">From:</span>
+<span class="font-body-md text-body-md font-medium text-on-surface">IT Service Desk</span>
+<div class="inline-flex items-center bg-surface-container-high px-2 py-0.5 rounded font-code text-code text-on-surface">
+<span>&lt;support@</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-1 font-bold rounded">payro<span class="underline decoration-wavy underline-offset-2">II</span>-update-internal.com</span>
+<span>&gt;</span>
+</div>
+</div>
+<button class="self-start sm:self-auto inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary-container transition-colors font-label-sm text-label-sm font-semibold cursor-pointer shadow-xs" onclick="highlightIndicator(1)">
+<span class="w-4 h-4 rounded-full bg-secondary text-on-secondary text-center leading-4 text-[10px]">1</span>
+<span>Homoglyph 'II'</span>
+</button>
+</div>
+<!-- RETURN-PATH Line -->
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-1">
+<div class="flex items-baseline gap-space-sm flex-wrap">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline w-24">Return-Path:</span>
+<span class="font-code text-code text-secondary font-medium bg-secondary-fixed/40 px-2 py-0.5 rounded">&lt;bounces@mailer-cdn38.biz&gt;</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant italic">(Envelope Sender Mismatch)</span>
+</div>
+</div>
+<!-- TO Line -->
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 py-1">
+<div class="flex items-baseline gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline w-24">To:</span>
+<span class="font-code text-code text-on-surface">Alex Vance &lt;a.vance@acmecorp-internal.net&gt;</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Oct 12, 14:18 (26 mins ago)</span>
+</div>
+<!-- AUTHENTICATION STATUS Line with Badge [2] -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-2 bg-surface-container-low px-3 rounded-lg">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline w-20">Auth Check:</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-label-sm font-code font-medium bg-error-container text-on-error-container">
+<span class="material-symbols-outlined text-[14px]">cancel</span>
+<span>SPF: FAIL</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-label-sm font-code font-medium bg-surface-variant text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">help</span>
+<span>DKIM: NONE</span>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-label-sm font-code font-medium bg-secondary-fixed text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+<span>DMARC: QUARANTINE</span>
+</span>
+</div>
+<button class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error-container text-on-error-container hover:bg-error/20 transition-colors font-label-sm text-label-sm font-semibold cursor-pointer shadow-xs" onclick="highlightIndicator(2)">
+<span class="w-4 h-4 rounded-full bg-error text-on-error text-center leading-4 text-[10px]">2</span>
+<span>Auth Breakdown</span>
+</button>
+</div>
+<!-- SUBJECT Line with Badge [3] -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-2">
+<div class="flex items-start sm:items-center gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline w-24 shrink-0">Subject:</span>
+<span class="font-title text-title text-on-surface bg-secondary-fixed/30 px-2 py-1 rounded">
+<span class="text-error font-bold">[URGENT]</span> Action Required: Mandated Q3 Direct Deposit Re-Verification by 17:00 EST
+              </span>
+</div>
+<button class="self-start sm:self-auto inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary-container transition-colors font-label-sm text-label-sm font-semibold cursor-pointer shrink-0 shadow-xs" onclick="highlightIndicator(3)">
+<span class="w-4 h-4 rounded-full bg-secondary text-on-secondary text-center leading-4 text-[10px]">3</span>
+<span>Urgency Tactic</span>
+</button>
+</div>
+</div>
+<!-- Email Body Content -->
+<div class="p-space-lg bg-surface-container-lowest flex flex-col gap-space-md">
+<div class="flex items-center justify-between py-2 bg-surface-container-low px-4 rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">corporate_fare</span>
+<span class="font-label-md text-label-md font-semibold text-primary">Acme Corporate · People Operations &amp; Payroll Services</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Internal Memorandum #092</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+            Alex,
+          </p>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+            During our scheduled audit of the second-half financial processing systems, our enterprise clearing gateway encountered an unverified status on your direct deposit credentials. In accordance with IRS Section 409A and corporate payroll compliance policies, all affected employees must complete synchronous credential re-validation prior to the upcoming bi-weekly disbursement cycle.
+          </p>
+<div class="bg-surface-container p-space-md rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">notification_important</span>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">Time-Sensitive Payroll Freeze Notice</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Failure to authenticate your banking routing information by <strong class="text-on-surface">17:00 EST today</strong> will necessitate withholding electronic disbursement and transitioning your account to physical paper check dispatch via postal courier (+14 day delay).
+              </p>
+</div>
+</div>
+<!-- Deceptive Action Button & In-Place Link Inspector [Badge 4] -->
+<div class="my-space-md flex flex-col items-center justify-center p-space-lg bg-surface-container-low rounded-xl gap-space-sm relative">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Hyperlink Forensic Inspection Stage</span>
+<div class="relative group flex flex-col items-center">
+<a class="px-space-xl py-3 rounded bg-primary text-on-primary font-title text-title shadow hover:bg-primary-container transition-all flex items-center gap-2 cursor-pointer" href="javascript:void(0)" onclick="highlightIndicator(4)">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+<span>Verify Direct Deposit Account Now</span>
+</a>
+<!-- Hover/Analytical URL Destination Callout -->
+<div class="mt-space-sm w-full max-w-lg bg-surface-container-highest p-space-sm rounded-lg flex flex-col gap-1 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">link_off</span>
+<span class="font-label-sm text-label-sm font-semibold uppercase">Deceptive Destination URL Revealed</span>
+</div>
+<button class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold" onclick="highlightIndicator(4)">
+<span class="w-3.5 h-3.5 rounded-full bg-secondary text-on-secondary text-center leading-3.5 text-[9px]">4</span>
+<span>Subdomain Trick</span>
+</button>
+</div>
+<div class="font-code text-code text-on-surface bg-surface-container-lowest p-2 rounded break-all select-all">
+<span class="text-outline">http://</span><span class="font-bold text-on-surface">login.secure-acme-payroll.com</span><span class="text-secondary font-bold bg-secondary-fixed/50 px-1 rounded">.auth-token.xyz</span><span class="text-outline">/update?session=9382104</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm pt-1">
+<span class="material-symbols-outlined text-[16px] text-secondary">info</span>
+<span>Notice: Actual top-level host is <strong class="text-secondary font-code">auth-token.xyz</strong>, not acmepayroll.com.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Attachment Section with Double Extension [Badge 5] -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">attachment</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-label-md text-label-md font-bold text-on-surface font-code">Q3_Direct_Deposit_Form.pdf<span class="bg-error-container text-on-error-container font-extrabold px-1 rounded">.iso</span></span>
+<span class="font-label-sm text-label-sm text-outline font-code">4.2 MB · Optical Disk Image</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Embedded container payload designed to bypass Office macro sandboxes.</span>
+</div>
+</div>
+<button class="self-start sm:self-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-error-container text-on-error-container hover:bg-error/20 transition-colors font-label-md text-label-md font-semibold cursor-pointer shrink-0" onclick="highlightIndicator(5)">
+<span class="w-4 h-4 rounded-full bg-error text-on-error text-center leading-4 text-[10px]">5</span>
+<span>Inspect Container</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pt-space-sm">
+            Kind regards,<br/>
+<strong class="text-on-surface">Enterprise Payroll Verification Operations</strong><br/>
+            Internal Automated Communication Dispatch #4982-C
+          </p>
+<!-- Interaction Helper Footnote -->
+<div class="bg-surface-container-high px-space-md py-2.5 rounded-lg flex items-center gap-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">touch_app</span>
+<span class="font-body-sm text-body-sm">
+<strong class="text-on-surface">Interactive Guidance:</strong> Click any numbered marker 
+              <span class="inline-block px-1.5 py-0.2 bg-secondary-fixed text-on-secondary-fixed text-label-sm rounded font-bold">1</span> through 
+              <span class="inline-block px-1.5 py-0.2 bg-secondary-fixed text-on-secondary-fixed text-label-sm rounded font-bold">5</span> 
+              to focus forensic deconstruction in the study dossier.
+            </span>
+</div>
+</div>
+</div>
+<!-- Supplementary Artifact Info Card -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-[24px]">verified</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">PhishGuard Forensic Sandbox Cleanroom</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Live telemetry isolated. Links and payloads neutralized for educational exploration.</span>
+</div>
+</div>
+<div class="hidden sm:flex items-center gap-1 font-code text-code text-on-surface-variant">
+<span>SHA-256: 7f3b...9a12</span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Educational Forensic Guide & Diagnostic Breakdown (5 Cols) -->
+<div class="xl:col-span-5 flex flex-col gap-space-md">
+<!-- Diagnostic Evaluation Scorecard -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Forensic Classification</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Telemetry Assessment</h2>
+</div>
+<span class="px-2.5 py-1 bg-error-container text-on-error-container font-label-md text-label-md font-bold rounded">
+            THREAT CONFIRMED
+          </span>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Composite Threat Index</span>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="font-display text-display text-error leading-none font-bold">98</span>
+<span class="font-title text-title text-outline">/100</span>
+</div>
+<span class="font-label-sm text-label-sm text-error font-medium mt-1">Severity: Critical</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Identified Markers</span>
+<div class="flex items-baseline gap-1 mt-2">
+<span class="font-display text-display text-primary leading-none font-bold" id="discovered-count">5</span>
+<span class="font-title text-title text-outline">/ 5 Found</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-medium mt-1">100% Laboratory Coverage</span>
+</div>
+</div>
+<!-- Radial Threat Distribution Visualizer (Inline SVG chart) -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">Attack Vector Breakdown</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Social engineering, credential interception, and executable evasion detected.</span>
+</div>
+<div class="relative w-16 h-16 shrink-0 flex items-center justify-center">
+<svg class="w-16 h-16 -rotate-90" viewbox="0 0 36 36">
+<!-- Background circle -->
+<path class="text-surface-container-highest" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<!-- Attack metric segments -->
+<path class="text-error" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="35, 100" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="30, 100" stroke-dashoffset="-35" stroke-width="3.5"></path>
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="25, 100" stroke-dashoffset="-65" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-code text-[11px] font-bold text-on-surface">5/5</span>
+</div>
+</div>
+</div>
+<!-- Educational Dossier: Forensic Indicators Accordion -->
+<div class="flex flex-col gap-space-sm" id="indicator-dossier">
+<!-- Indicator 1: Homoglyph Attack -->
+<div class="indicator-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200" id="card-indicator-1">
+<div class="flex items-start justify-between cursor-pointer" onclick="toggleCard(1)">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold text-center leading-6 text-label-sm shrink-0">1</span>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Visual Deception</span>
+<h3 class="font-title text-title text-on-surface">Homoglyph / Punycode Substitution</h3>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-200" id="chevron-1">expand_less</span>
+</div>
+<div class="mt-space-md flex flex-col gap-space-sm pt-space-sm" id="content-1">
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+              The sender address utilizes uppercase Latin <strong class="font-code text-secondary font-bold">II</strong> (capital I's) in place of lower-case <strong class="font-code text-on-surface font-bold">ll</strong> to construct <span class="font-code bg-surface-container px-1 py-0.5 rounded text-on-surface">payroII-update-internal.com</span>. In sans-serif typefaces, these characters are virtually indistinguishable to the human eye.
+            </p>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-center justify-between font-code text-code">
+<span class="text-error font-medium">Rendered: payroII.com</span>
+<span class="text-tertiary font-medium">Intended: payroll.com</span>
+</div>
+<div class="p-space-sm bg-surface-container rounded-lg border-l-4 border-secondary text-body-sm text-on-surface-variant">
+<strong class="text-on-surface">Analyst Defense:</strong> Inspect character byte codes using forensic header decoders or convert to Punycode before trusting visual brand similarity.
+            </div>
+</div>
+</div>
+<!-- Indicator 2: Cryptographic Header Failures -->
+<div class="indicator-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200" id="card-indicator-2">
+<div class="flex items-start justify-between cursor-pointer" onclick="toggleCard(2)">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-error text-on-error font-bold text-center leading-6 text-label-sm shrink-0">2</span>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error font-semibold">Identity Authentication</span>
+<h3 class="font-title text-title text-on-surface">Cryptographic Header Breakdown</h3>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-200" id="chevron-2">expand_more</span>
+</div>
+<div class="hidden mt-space-md flex flex-col gap-space-sm pt-space-sm" id="content-2">
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+              The sending server's IP address (<span class="font-code bg-surface-container px-1 rounded">198.51.100.44</span>) does not match the published SPF TXT records for the apparent sender domain. Furthermore, the Return-Path resolves to an unrelated infrastructure asset (<span class="font-code bg-secondary-fixed/50 px-1 rounded">mailer-cdn38.biz</span>).
+            </p>
+<div class="grid grid-cols-3 gap-2 text-center font-code text-code">
+<div class="bg-error-container text-on-error-container p-2 rounded">
+<span class="block font-bold">SPF</span>
+<span>FAIL (Soft)</span>
+</div>
+<div class="bg-surface-container text-on-surface-variant p-2 rounded">
+<span class="block font-bold">DKIM</span>
+<span>NONE (Missing)</span>
+</div>
+<div class="bg-secondary-fixed text-on-secondary-fixed p-2 rounded">
+<span class="block font-bold">DMARC</span>
+<span>QUARANTINE</span>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container rounded-lg border-l-4 border-secondary text-body-sm text-on-surface-variant">
+<strong class="text-on-surface">Analyst Defense:</strong> When SPF and DKIM fail alignment, the envelope header cannot guarantee sender authenticity regardless of display name.
+            </div>
+</div>
+</div>
+<!-- Indicator 3: Artificial Urgency & Coercion -->
+<div class="indicator-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200" id="card-indicator-3">
+<div class="flex items-start justify-between cursor-pointer" onclick="toggleCard(3)">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-secondary text-on-secondary font-bold text-center leading-6 text-label-sm shrink-0">3</span>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Psychological Heuristic</span>
+<h3 class="font-title text-title text-on-surface">Manufactured Scarcity &amp; Urgency</h3>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-200" id="chevron-3">expand_more</span>
+</div>
+<div class="hidden mt-space-md flex flex-col gap-space-sm pt-space-sm" id="content-3">
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+              The attacker leverages a tight artificial deadline (<span class="font-medium text-error">"by 17:00 EST today"</span>) coupled with punitive financial consequence (<span class="font-medium">paycheck withholding and 14-day delay</span>). This cognitive hijacking technique is designed to bypass rational skepticism by provoking cortisol response.
+            </p>
+<div class="p-space-sm bg-surface-container rounded-lg border-l-4 border-secondary text-body-sm text-on-surface-variant">
+<strong class="text-on-surface">Analyst Defense:</strong> Legitimate HR/Payroll policies never implement zero-notice payment cancellation without dual-channel executive communication.
+            </div>
+</div>
+</div>
+<!-- Indicator 4: Deceptive Subdomain Hierarchy -->
+<div class="indicator-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200" id="card-indicator-4">
+<div class="flex items-start justify-between cursor-pointer" onclick="toggleCard(4)">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary-container font-bold text-center leading-6 text-label-sm shrink-0">4</span>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Network &amp; URL Topology</span>
+<h3 class="font-title text-title text-on-surface">Deep Subdomain Masquerade</h3>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-200" id="chevron-4">expand_more</span>
+</div>
+<div class="hidden mt-space-md flex flex-col gap-space-sm pt-space-sm" id="content-4">
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+              The anchor text appears valid, but reading the host hierarchy reveals the domain is structured with legitimate-looking prefixes prepended to an adversary-owned root domain.
+            </p>
+<div class="bg-surface-container p-space-sm rounded-lg font-code text-code text-on-surface">
+<div class="text-outline text-[11px] mb-1">DECONSTRUCTED STRUCTURE:</div>
+<div>Subdomain: <span class="text-on-surface font-semibold">login.secure-acme-payroll.com</span></div>
+<div>Actual Root Domain: <span class="text-error font-bold underline">.auth-token.xyz</span></div>
+</div>
+<div class="p-space-sm bg-surface-container rounded-lg border-l-4 border-primary text-body-sm text-on-surface-variant">
+<strong class="text-on-surface">Analyst Defense:</strong> Always read URLs starting immediately before the first single slash (<code class="font-code">/</code>) backward to identify the authentic Top-Level Domain (TLD).
+            </div>
+</div>
+</div>
+<!-- Indicator 5: Double Extension ISO Payload -->
+<div class="indicator-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200" id="card-indicator-5">
+<div class="flex items-start justify-between cursor-pointer" onclick="toggleCard(5)">
+<div class="flex items-center gap-space-sm">
+<span class="w-6 h-6 rounded-full bg-error text-on-error font-bold text-center leading-6 text-label-sm shrink-0">5</span>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error font-semibold">Payload Architecture</span>
+<h3 class="font-title text-title text-on-surface">Double Extension Container (.iso)</h3>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline transition-transform duration-200" id="chevron-5">expand_more</span>
+</div>
+<div class="hidden mt-space-md flex flex-col gap-space-sm pt-space-sm" id="content-5">
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+              The attachment disguises an optical disc image file (<span class="font-code bg-error-container text-on-error-container px-1 rounded">.iso</span>) as a routine document (<span class="font-code text-on-surface">.pdf</span>). When double-clicked in modern Windows environments, the OS automatically mounts the virtual volume without web-mark warnings (Mark of the Web evasion).
+            </p>
+<div class="p-space-sm bg-surface-container rounded-lg border-l-4 border-error text-body-sm text-on-surface-variant">
+<strong class="text-on-surface">Analyst Defense:</strong> Enable full filename extension viewing in OS explorer settings and sandbox all disk container files regardless of document naming.
+            </div>
+</div>
+</div>
+</div>
+<!-- Action Verification & Student Response Station -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md mt-space-xs">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Student Decision Gate</span>
+<h3 class="font-title text-title text-on-surface">Recommended Analytical Action</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Select the appropriate defensive action to complete the forensics module.</span>
+</div>
+<div class="flex flex-col sm:flex-row gap-space-sm">
+<button class="flex-1 py-3 px-space-md rounded bg-primary hover:bg-primary-container text-on-primary transition-all font-title text-title flex items-center justify-center gap-2 cursor-pointer shadow" id="flag-btn" onclick="recordDecision('flagged')">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+<span>Flag &amp; Report Phishing</span>
+</button>
+<button class="py-3 px-space-md rounded bg-surface-container hover:bg-surface-container-high text-on-surface transition-all font-title text-title flex items-center justify-center gap-2 cursor-pointer" id="quiz-btn" onclick="recordDecision('practice')">
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+<span>Continue to Quiz</span>
+</button>
+</div>
+<!-- Student Feedback Notification Area (Dynamic) -->
+<div class="hidden p-space-md rounded-lg flex items-start gap-space-sm" id="action-feedback">
+<span class="material-symbols-outlined text-[22px] mt-0.5" id="feedback-icon"></span>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-md text-label-md font-bold" id="feedback-title"></span>
+<span class="font-body-sm text-body-sm leading-relaxed" id="feedback-desc"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function toggleRawHeaders() {
+    const pane = document.getElementById('raw-headers-pane');
+    const btn = document.getElementById('toggle-headers-btn');
+    if (pane.classList.contains('hidden')) {
+      pane.classList.remove('hidden');
+      btn.classList.add('bg-primary-container', 'text-on-primary-container');
+    } else {
+      pane.classList.add('hidden');
+      btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+    }
+  }
+
+  function toggleCard(index) {
+    const content = document.getElementById('content-' + index);
+    const chevron = document.getElementById('chevron-' + index);
+    const isHidden = content.classList.contains('hidden');
+
+    // Close others for clean single-view accordion focus
+    for (let i = 1; i <= 5; i++) {
+      const c = document.getElementById('content-' + i);
+      const ch = document.getElementById('chevron-' + i);
+      if (c && !c.classList.contains('hidden')) {
+        c.classList.add('hidden');
+        if (ch) ch.textContent = 'expand_more';
+      }
+    }
+
+    if (isHidden) {
+      content.classList.remove('hidden');
+      chevron.textContent = 'expand_less';
+    }
+  }
+
+  function highlightIndicator(index) {
+    // Open target indicator accordion
+    for (let i = 1; i <= 5; i++) {
+      const c = document.getElementById('content-' + i);
+      const ch = document.getElementById('chevron-' + i);
+      const card = document.getElementById('card-indicator-' + i);
+      
+      if (i === index) {
+        c.classList.remove('hidden');
+        ch.textContent = 'expand_less';
+        card.classList.add('ring-2', 'ring-primary', 'bg-surface-container-low');
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        c.classList.add('hidden');
+        ch.textContent = 'expand_more';
+        card.classList.remove('ring-2', 'ring-primary', 'bg-surface-container-low');
+      }
+    }
+  }
+
+  function recordDecision(type) {
+    const feedbackBox = document.getElementById('action-feedback');
+    const feedbackIcon = document.getElementById('feedback-icon');
+    const feedbackTitle = document.getElementById('feedback-title');
+    const feedbackDesc = document.getElementById('feedback-desc');
+
+    feedbackBox.classList.remove('hidden', 'bg-tertiary-fixed', 'text-on-tertiary-fixed', 'bg-surface-container', 'text-on-surface');
+
+    if (type === 'flagged') {
+      feedbackBox.classList.add('bg-tertiary-fixed', 'text-on-tertiary-fixed');
+      feedbackIcon.textContent = 'check_circle';
+      feedbackTitle.textContent = 'Exemplary Defense Response Verified';
+      feedbackDesc.textContent = 'Artifact successfully quarantined. Forensic indicators [1-5] correlated to Threat Actor Playbook #TA-402 (Credential Harvesting via Disk Images). 100/100 points awarded for this inspection station.';
+    } else {
+      feedbackBox.classList.add('bg-surface-container', 'text-on-surface');
+      feedbackIcon.textContent = 'school';
+      feedbackTitle.textContent = 'Navigating to Comprehensive Knowledge Quiz';
+      feedbackDesc.textContent = 'Preparing 5 multiple choice questions covering SPF alignment, homoglyph recognition, and ISO double extensions...';
+    }
+  }
+
+  function resetLab() {
+    // Reset Accordion to default state
+    for (let i = 1; i <= 5; i++) {
+      const c = document.getElementById('content-' + i);
+      const ch = document.getElementById('chevron-' + i);
+      const card = document.getElementById('card-indicator-' + i);
+      card.classList.remove('ring-2', 'ring-primary', 'bg-surface-container-low');
+      if (i === 1) {
+        c.classList.remove('hidden');
+        ch.textContent = 'expand_less';
+      } else {
+        c.classList.add('hidden');
+        ch.textContent = 'expand_more';
+      }
+    }
+    // Hide Raw Headers
+    const headers = document.getElementById('raw-headers-pane');
+    if (!headers.classList.contains('hidden')) {
+      headers.classList.add('hidden');
+      document.getElementById('toggle-headers-btn').classList.remove('bg-primary-container', 'text-on-primary-container');
+    }
+    // Hide Feedback Box
+    document.getElementById('action-feedback').classList.add('hidden');
+  }
+</script></main></div></body></html>

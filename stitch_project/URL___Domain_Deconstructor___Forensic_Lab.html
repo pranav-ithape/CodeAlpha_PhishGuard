@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-container": "#ffdad6", "on-secondary": "#ffffff", "on-primary-container": "#b2e9e5", "on-error": "#ffffff", "outline": "#707978", "surface-bright": "#fbf9f7", "secondary-container": "#fead96", "tertiary-fixed": "#cbead1", "on-tertiary-fixed": "#062011", "on-surface": "#1b1c1b", "outline-variant": "#bfc8c7", "on-secondary-fixed": "#380d02", "surface-variant": "#e3e2e0", "surface-container-high": "#e9e8e6", "error": "#ba1a1a", "surface-tint": "#316764", "on-tertiary": "#ffffff", "surface-container-lowest": "#ffffff", "inverse-on-surface": "#f2f0ee", "on-tertiary-fixed-variant": "#324d3a", "on-primary-fixed": "#00201f", "tertiary-container": "#4d6954", "surface": "#fbf9f7", "surface-container-highest": "#e3e2e0", "on-surface-variant": "#404848", "on-tertiary-container": "#c8e7cd", "inverse-primary": "#9ad1cd", "surface-container": "#efeeec", "tertiary-fixed-dim": "#b0ceb5", "on-secondary-container": "#793e2d", "on-primary-fixed-variant": "#144f4c", "on-secondary-fixed-variant": "#6f3726", "primary-fixed-dim": "#9ad1cd", "surface-container-low": "#f5f3f1", "on-background": "#1b1c1b", "secondary-fixed": "#ffdbd1", "surface-dim": "#dbdad8", "background": "#fbf9f7", "primary": "#195350", "on-primary": "#ffffff", "tertiary": "#36513e", "on-error-container": "#93000a", "secondary-fixed-dim": "#ffb59f", "inverse-surface": "#30312f", "primary-container": "#356b68", "primary-fixed": "#b5ede9", "secondary": "#8c4e3b" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xs": "0.25rem", "space-lg": "1.5rem", "space-xl": "2.5rem", "gutter-mobile": "1rem", "space-sm": "0.5rem", "gutter": "1.5rem", "margin": "2.5rem", "space-md": "1rem", "margin-mobile": "1.25rem" }, "fontFamily": { "title": [ "Public Sans" ], "code": [ "JetBrains Mono" ], "headline-lg-mobile": [ "Public Sans" ], "headline-md": [ "Public Sans" ], "body-sm": [ "Public Sans" ], "headline-lg": [ "Public Sans" ], "headline-sm": [ "Public Sans" ], "body-lg": [ "Public Sans" ], "label-md": [ "Public Sans" ], "display": [ "Public Sans" ], "label-sm": [ "Public Sans" ], "display-mobile": [ "Public Sans" ], "body-md": [ "Public Sans" ] }, "fontSize": { "title": [ "18px", { "lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "600" } ], "code": [ "13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-lg-mobile": [ "26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "headline-md": [ "24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" } ], "body-sm": [ "14px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "headline-lg": [ "32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "headline-sm": [ "20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" } ], "body-lg": [ "18px", { "lineHeight": "30px", "letterSpacing": "0.005em", "fontWeight": "400" } ], "label-md": [ "13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" } ], "display": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" } ], "label-sm": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" } ], "display-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "-0.015em", "fontWeight": "600" } ], "body-md": [ "16px", { "lineHeight": "26px", "letterSpacing": "0.005em", "fontWeight": "400" } ] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-high border-r border-outline-variant z-50 flex flex-col justify-between pt-5 pb-5"><div class="flex flex-col"><div class="px-space-lg pb-4 border-b border-outline-variant flex items-center gap-space-sm"><img alt="PhishGuard Readability-First Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UAKMXiF77s20r7Xl7xn5lXhdq6GmQmQFCDbV-vvG4ABIebkvbvOIInNdk2vt0pwLhsaWiGwlqOrx231HHLEdmJvWv5wVSrs_Q5JsSKk7NimCWExE-2n_xqOZXXAVixA5h1Uj3cOJbK9w9441j8WVBd8AgIko9bcGx__IbH3ywhR8FPFpK2YBoIWEhqx-E3TV9manowFD1PvyYAx6BPjUcOIYlEgO-Amv4hj651-03TTz4XMQwXurbl9fCk"/><div class="flex flex-col"><span class="font-title text-title text-primary tracking-tight leading-none">PhishGuard</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-1">Educational Suite</span></div></div><nav class="flex flex-col gap-y-1 px-space-sm mt-space-md" data-active-classes="bg-surface-container-lowest text-on-surface font-title border-l-4 border-primary shadow-sm"><div class="px-space-md pt-2 pb-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">General</span></div><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="dashboard-and-modules" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard &amp; Modules</span></a><div class="px-space-md pt-space-sm pb-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Educational Modules</span></div><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="course-curriculum" href="#"><span class="material-symbols-outlined text-[20px]">auto_stories</span><span>Course Curriculum</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="case-studies-archive" href="#"><span class="material-symbols-outlined text-[20px]">history_edu</span><span>Case Studies Archive</span></a><div class="px-space-md pt-space-sm pb-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Interactive Labs</span></div><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="email-inspector" href="#"><span class="material-symbols-outlined text-[20px]">mark_email_unread</span><span>Email Inspector</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="url-and-domain-lab" href="#"><span class="material-symbols-outlined text-[20px]">link</span><span>URL &amp; Domain Lab</span></a><div class="px-space-md pt-space-sm pb-1"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Evaluation &amp; Response</span></div><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="knowledge-assessment" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span>Knowledge Assessment</span></a><a class="flex items-center gap-space-sm px-space-md py-2 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="incident-response-guide" href="#"><span class="material-symbols-outlined text-[20px]">shield</span><span>Incident Response Guide</span></a></nav></div><div class="px-space-lg pt-4 border-t border-outline-variant flex flex-col gap-1"><span class="font-label-sm text-label-sm text-on-surface-variant">PhishGuard Education v2.4</span><span class="font-label-sm text-label-sm text-outline">Readability-First Security Archival</span></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-low border-b border-outline-variant z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><img alt="PhishGuard Readability-First Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UAKMXiF77s20r7Xl7xn5lXhdq6GmQmQFCDbV-vvG4ABIebkvbvOIInNdk2vt0pwLhsaWiGwlqOrx231HHLEdmJvWv5wVSrs_Q5JsSKk7NimCWExE-2n_xqOZXXAVixA5h1Uj3cOJbK9w9441j8WVBd8AgIko9bcGx__IbH3ywhR8FPFpK2YBoIWEhqx-E3TV9manowFD1PvyYAx6BPjUcOIYlEgO-Amv4hj651-03TTz4XMQwXurbl9fCk"/><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest border border-outline-variant px-2 py-0.5 rounded">Educational Learning Suite</span></div><div class="flex items-center gap-space-lg"><div class="hidden lg:flex items-center gap-space-sm"><span class="font-label-md text-label-md text-on-surface-variant">Curriculum: 68% Completed</span><div class="w-24 h-1.5 bg-surface-container-highest rounded-full overflow-hidden"><div class="w-[68%] h-full bg-primary rounded-full"></div></div></div><button class="flex items-center gap-1.5 px-3 py-1.5 rounded border border-secondary text-secondary hover:bg-secondary-fixed hover:text-on-secondary-fixed transition-colors font-label-md text-label-md"><span class="material-symbols-outlined text-[16px]">flag</span><span>Report Suspicious Email</span></button><div class="flex items-center gap-space-sm pl-2 border-l border-outline-variant"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold">Alex Vance</span><span class="font-label-sm text-label-sm text-on-surface-variant">Security Trainee</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background min-h-screen px-space-lg py-space-xl"><div class="flex flex-col w-full max-w-7xl mx-auto space-y-space-xl">
+<!-- Learning Context Header -->
+<section class="flex flex-col space-y-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest bg-secondary-fixed/50 px-2 py-0.5 rounded">Practical Labs • Module 04</span>
+<span class="font-code text-code text-outline">§ RFC 3986 Standards</span>
+<span class="font-label-sm text-label-sm text-tertiary bg-tertiary-fixed/60 px-2 py-0.5 rounded ml-auto flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">school</span> Interactive Lab
+      </span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div class="max-w-3xl">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">URL &amp; Domain Forensic Deconstructor</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          Deconstruct suspicious hyperlinks, isolate apex ownership from adversarial subdomain mimicry, and learn how deceptive routes are engineered under strict RFC specifications.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-2 rounded-xl shadow-sm border-l-4 border-primary">
+<span class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Methodology</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Strict Syntactic Decomposition</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive URL Input & Token Breakdown Bar -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col space-y-space-lg">
+<!-- Active Payload Selector & Inspection Controls -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px]">troubleshoot</span>
+<span class="font-title text-title text-on-surface">Target Specimen Inspection</span>
+<span class="font-label-sm text-label-sm text-outline px-2 py-0.5 bg-surface-container rounded font-code">Specimen #RFC-7104</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high transition-colors font-label-md text-label-md text-on-surface" id="copy-btn">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span id="copy-text">Copy URL</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high transition-colors font-label-md text-label-md text-on-surface" id="reset-token-btn">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span>Reset Highlights</span>
+</button>
+</div>
+</div>
+<!-- Raw Monospace URL Bar -->
+<div class="bg-surface-container-high p-space-md rounded-lg flex flex-col md:flex-row md:items-center justify-between gap-space-sm overflow-x-auto shadow-inner">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-outline text-[18px] shrink-0">link</span>
+<span class="font-code text-code text-on-surface select-all break-all" id="full-url-display">https://login.microsoftonline.com.account-verification-portal.net/oauth2/v2.0/authorize?client_id=sec-audit</span>
+</div>
+<div class="shrink-0 flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-semibold">Analyzed</span>
+</div>
+</div>
+<!-- Syntactic Breakdown Token Bar -->
+<div class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-outline tracking-wider">RFC 3986 Grammar Tokens (Click any token to inspect)</span>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span> Interactive Inspector
+        </span>
+</div>
+<!-- Segmented Interactive Token Pipeline -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 pt-1" id="token-grid">
+<!-- Token 1: Protocol -->
+<button class="token-btn text-left p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group shadow-sm active:scale-95" data-token="protocol">
+<div class="flex justify-between items-center w-full mb-1">
+<span class="font-label-sm text-label-sm text-outline uppercase font-code">01 Protocol</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">lock</span>
+</div>
+<span class="font-code text-code text-primary font-semibold break-all">https://</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2">TLS Transport</span>
+</button>
+<!-- Token 2: Adversary Subdomain -->
+<button class="token-btn text-left p-3 rounded-lg bg-secondary-fixed/30 hover:bg-secondary-fixed/50 transition-all flex flex-col justify-between group shadow-sm active:scale-95 ring-1 ring-secondary/30" data-token="subdomain">
+<div class="flex justify-between items-center w-full mb-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-code font-bold">02 Subdomain</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">visibility</span>
+</div>
+<span class="font-code text-code text-secondary break-all font-medium">login.microsoft...</span>
+<span class="font-label-sm text-label-sm text-on-secondary-fixed-variant mt-2 font-medium">Brand Mimicry Mask</span>
+</button>
+<!-- Token 3: Apex Domain -->
+<button class="token-btn text-left p-3 rounded-lg bg-secondary-container hover:bg-secondary-container/80 transition-all flex flex-col justify-between group shadow-sm active:scale-95 ring-2 ring-secondary" data-token="apex">
+<div class="flex justify-between items-center w-full mb-1">
+<span class="font-label-sm text-label-sm text-on-secondary-container uppercase font-code font-bold">03 Apex Domain</span>
+<span class="material-symbols-outlined text-[16px] text-secondary">gavel</span>
+</div>
+<span class="font-code text-code text-on-secondary-container font-bold break-all">account-verification-portal</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container mt-2 font-semibold">True Registered Host</span>
+</button>
+<!-- Token 4: TLD -->
+<button class="token-btn text-left p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group shadow-sm active:scale-95" data-token="tld">
+<div class="flex justify-between items-center w-full mb-1">
+<span class="font-label-sm text-label-sm text-outline uppercase font-code">04 TLD</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">public</span>
+</div>
+<span class="font-code text-code text-on-surface font-semibold">.net</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2">Generic Registry</span>
+</button>
+<!-- Token 5: Path -->
+<button class="token-btn text-left p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group shadow-sm active:scale-95" data-token="path">
+<div class="flex justify-between items-center w-full mb-1">
+<span class="font-label-sm text-label-sm text-outline uppercase font-code">05 Path</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">folder_open</span>
+</div>
+<span class="font-code text-code text-on-surface break-all">/oauth2/v2.0/auth</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2">Imitated Endpoint</span>
+</button>
+<!-- Token 6: Query Param -->
+<button class="token-btn text-left p-3 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col justify-between group shadow-sm active:scale-95" data-token="query">
+<div class="flex justify-between items-center w-full mb-1">
+<span class="font-label-sm text-label-sm text-outline uppercase font-code">06 Query</span>
+<span class="material-symbols-outlined text-[16px] text-outline group-hover:text-primary transition-colors">data_object</span>
+</div>
+<span class="font-code text-code text-outline break-all">?client_id=sec-au..</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-2">Session Telemetry</span>
+</button>
+</div>
+<!-- Token Insight Dynamic Banner -->
+<div class="bg-surface-container p-space-md rounded-lg flex items-start gap-space-sm transition-all duration-200" id="token-insight-box">
+<span class="material-symbols-outlined text-secondary text-[24px] mt-0.5" id="insight-icon">verified_user</span>
+<div class="flex flex-col">
+<span class="font-title text-title text-on-surface" id="insight-title">Inspecting: 03 Apex Domain (account-verification-portal)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed" id="insight-desc">
+            The Apex domain is the actual entity purchased and managed by the registrant. Regardless of how many legitimate corporate names precede it in the subdomain string (e.g., "microsoftonline.com"), network routing resolves exclusively to the authoritative nameservers of <strong>account-verification-portal.net</strong>.
+          </p>
+</div>
+</div>
+</div>
+<!-- Editorial Golden Rule Box (Burnt Copper Accent) -->
+<div class="bg-surface-container-high p-space-lg rounded-xl relative overflow-hidden flex flex-col md:flex-row items-start md:items-center gap-space-md border-l-[6px] border-secondary shadow-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-[26px]">lightbulb</span>
+</div>
+<div class="flex flex-col space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Forensic Reading Heuristic</span>
+<h2 class="font-title text-title text-on-surface">The Golden Rule of Domain Reading</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Look immediately to the left of the <strong>first single forward slash (/)</strong> following the scheme. The apex domain is strictly composed of the <strong>two rightmost dot-separated labels</strong> prior to that slash. Everything situated to the left of these two labels is purely user-configurable subdomain space.
+        </p>
+</div>
+</div>
+</section>
+<!-- Visual Analytical Layout: Diagram & Forensic Findings -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Visual Grammar Hierarchy Diagram (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Structural Architecture</span>
+<h2 class="font-title text-title text-on-surface">RFC 3986 Authority Dissection</h2>
+</div>
+<span class="font-code text-code text-on-surface-variant bg-surface-container px-2.5 py-1 rounded">URI Hierarchy Tree</span>
+</div>
+<!-- Architectural SVG Diagram -->
+<div class="w-full bg-surface-container-low rounded-lg p-space-md flex flex-col items-center justify-center">
+<svg class="w-full h-auto text-on-surface" fill="none" viewbox="0 0 760 220" xmlns="http://www.w3.org/2000/svg">
+<!-- Authority Group Box -->
+<rect fill="currentColor" fill-opacity="0.04" height="75" rx="6" stroke="currentColor" stroke-dasharray="4 4" stroke-opacity="0.2" width="460" x="110" y="20"></rect>
+<text class="font-label-sm" fill="currentColor" font-size="11" opacity="0.6" text-anchor="middle" x="340" y="40">AUTHORITY COMPONENT (DNS RESOLUTION BOUNDARY)</text>
+<!-- Scheme Box -->
+<rect fill="#356B68" fill-opacity="0.15" height="42" rx="4" width="80" x="20" y="90"></rect>
+<text fill="#195350" font-family="JetBrains Mono" font-size="12" font-weight="600" text-anchor="middle" x="60" y="116">https://</text>
+<text fill="currentColor" font-size="11" opacity="0.7" text-anchor="middle" x="60" y="152">Scheme</text>
+<!-- Subdomain Box (Attacker controlled brand injection) -->
+<rect fill="#8C4E3B" fill-opacity="0.15" height="42" rx="4" width="190" x="120" y="90"></rect>
+<text fill="#8C4E3B" font-family="JetBrains Mono" font-size="12" font-weight="500" text-anchor="middle" x="215" y="116">login.microsoftonline.com.</text>
+<text fill="#8C4E3B" font-size="11" font-weight="600" text-anchor="middle" x="215" y="152">← Arbitrary Subdomain →</text>
+<text fill="currentColor" font-size="10" opacity="0.5" text-anchor="middle" x="215" y="168">Controlled by owner of .portal.net</text>
+<!-- Apex Domain + TLD Box -->
+<rect fill="#FEAD96" fill-opacity="0.4" height="50" rx="4" stroke="#8C4E3B" stroke-width="2" width="240" x="320" y="86"></rect>
+<text fill="#380D02" font-family="JetBrains Mono" font-size="12" font-weight="700" text-anchor="middle" x="440" y="116">account-verification-portal.net</text>
+<text fill="#793E2D" font-size="11" font-weight="700" text-anchor="middle" x="440" y="156">↑ CRITICAL: APEX ROOT DOMAIN</text>
+<text fill="currentColor" font-size="10" opacity="0.6" text-anchor="middle" x="440" y="172">Registry-Controlled Boundary (ICANN / Verisign)</text>
+<!-- Path Box -->
+<rect fill="currentColor" fill-opacity="0.06" height="42" rx="4" width="160" x="580" y="90"></rect>
+<text fill="currentColor" font-family="JetBrains Mono" font-size="12" font-weight="500" text-anchor="middle" x="660" y="116">/oauth2/v2.0/auth...</text>
+<text fill="currentColor" font-size="11" opacity="0.7" text-anchor="middle" x="660" y="152">Resource Route</text>
+<!-- Arrow & Slash indicator -->
+<path d="M 570 70 L 570 140" stroke="#BA1A1A" stroke-dasharray="2 2" stroke-width="2"></path>
+<text fill="#BA1A1A" font-size="11" font-weight="600" text-anchor="middle" x="570" y="195">↑ First Single Slash (/)</text>
+</svg>
+</div>
+<!-- Specimen Contextual Notes -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-2">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">schema</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Faux-Hierarchy Illusion</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">The period between "com" and "account" creates an illusion of separation, but legally belongs entirely to the host.</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">devices</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Address Bar Truncation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mobile viewports only render the first ~24 characters, hiding the true apex domain completely off-screen.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Forensic Visual Artifact / Context Image (5 cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Lab Evidence Archive</span>
+<h2 class="font-title text-title text-on-surface">Live Attack Topology</h2>
+</div>
+<span class="material-symbols-outlined text-outline">fingerprint</span>
+</div>
+<div class="relative w-full h-48 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Close up photograph of an archival investigative security laboratory desk. A vintage printed network routing ledger and RFC specifications book lie beside a modern matte high-contrast monitor showing domain telemetry graphs. Neutral warm ambient study lighting, calm editorial academic aesthetic in tones of bone ivory, deep teal, and muted terra cotta ink." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgqIMOmVPxVq4ryMJELBseX3QQ1kFqdxWgASshqcTNgXm-wKRo6p1bDh5W5ca9uQBnWPxfVXXQBDXjWqfOHzEINFEaFcPL_V2TqnxGUu7aH9pDfYbm2US6sZEx1wSHS2Dg2Ajoy5ma-9OT1btV6ylMedcNHqfhTr_yGp-oEMZMboR27HIJqeNkQX4EMRW9mTvl2bfI_Ai61bRjQXfFIoAAFyxL8uFmJ6OXXMVA7xFw93tff0mIdnSwiA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 flex justify-between items-center bg-surface-container-lowest/90 backdrop-blur-sm p-2 rounded">
+<span class="font-code text-code text-on-surface font-semibold">Exhibit: 04-AITM-PROXY</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase">Active Campaign</span>
+</div>
+</div>
+<div class="flex flex-col space-y-2">
+<div class="flex justify-between items-center text-body-sm py-1 border-b border-surface-container-high">
+<span class="text-on-surface-variant font-label-md">Server Autonomous System:</span>
+<span class="font-code text-code text-on-surface font-semibold">AS204915 (Offshore VPS)</span>
+</div>
+<div class="flex justify-between items-center text-body-sm py-1 border-b border-surface-container-high">
+<span class="text-on-surface-variant font-label-md">Nameserver Authority:</span>
+<span class="font-code text-code text-on-surface">ns1.eviltrap-dns.top</span>
+</div>
+<div class="flex justify-between items-center text-body-sm py-1">
+<span class="text-on-surface-variant font-label-md">Reverse DNS Match:</span>
+<span class="font-code text-code text-error font-semibold">FAILED (Mismatch)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Educational Diagnostic Findings (4-Card Grid on Ivory) -->
+<section class="flex flex-col space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Forensic Dossier</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Educational Diagnostic Findings</h2>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">4 Signals Identified</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1: Domain Age -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between space-y-space-md hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-secondary text-[26px]">calendar_clock</span>
+<span class="font-label-sm text-label-sm text-on-secondary-fixed-variant bg-secondary-fixed/50 px-2 py-0.5 rounded font-bold uppercase">3 Days Old</span>
+</div>
+<h3 class="font-title text-title text-on-surface">Domain Age &amp; Registration</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Registered 3 days ago via NameCheap. High risk: 78% of credential harvesters operate on apex domains younger than 30 days before reputation feeds flag and revoke them.
+          </p>
+</div>
+<div class="pt-2 bg-surface-container rounded p-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">warning</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Telemetry: Newly Observed Domain</span>
+</div>
+</div>
+<!-- Card 2: Homoglyph & Brand Injection -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between space-y-space-md hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-secondary text-[26px]">badge</span>
+<span class="font-label-sm text-label-sm text-on-secondary-container bg-secondary-container px-2 py-0.5 rounded font-bold uppercase">Subdomain Spoof</span>
+</div>
+<h3 class="font-title text-title text-on-surface">Brand Injection Vector</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            The adversary injects legitimate brand names ("microsoftonline") into third-level subdomains to deceive visual scanning and exploit truncated browser address bars on mobile viewports.
+          </p>
+</div>
+<div class="pt-2 bg-surface-container rounded p-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">visibility_off</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Target: Microsoft Entra SSO</span>
+</div>
+</div>
+<!-- Card 3: TLS Certificate Assurance -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between space-y-space-md hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary text-[26px]">verified</span>
+<span class="font-label-sm text-label-sm text-primary bg-primary-fixed px-2 py-0.5 rounded font-bold uppercase">DV Class</span>
+</div>
+<h3 class="font-title text-title text-on-surface">TLS Certificate Fallacy</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Issued by Let's Encrypt. <em>Educational note:</em> Domain Validated (DV) certificates prove only that traffic is encrypted to the recipient host, <strong>not</strong> the ethical or commercial legitimacy of the operator.
+          </p>
+</div>
+<div class="pt-2 bg-surface-container rounded p-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">lock_clock</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Padlock ≠ Safety Guarantee</span>
+</div>
+</div>
+<!-- Card 4: Reputation Feeds -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between space-y-space-md hover:bg-surface-container-low transition-colors">
+<div class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-secondary text-[26px]">security</span>
+<span class="font-label-sm text-label-sm text-error bg-error-container px-2 py-0.5 rounded font-bold uppercase">4/68 Feeds</span>
+</div>
+<h3 class="font-title text-title text-on-surface">Threat Intelligence Feeds</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Flagged on 4 global security feeds as an active Adversary-in-the-Middle (AiTM) proxy specifically tailored to bypass FIDO2 and SMS session tokens in real time.
+          </p>
+</div>
+<div class="pt-2 bg-surface-container rounded p-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-error">radar</span>
+<span class="font-label-sm text-label-sm text-on-surface font-medium">AiTM Proxy Reverse Tunneled</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Practice Challenge Widget -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col space-y-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-2 pb-space-sm border-b border-surface-container-high">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary text-[20px]">quiz</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Interactive Diagnostic Assessment</span>
+<h2 class="font-title text-title text-on-surface">Practical Comprehension Check</h2>
+</div>
+</div>
+<span class="font-code text-code text-primary bg-primary-fixed/50 px-3 py-1 rounded">Question 1 of 1</span>
+</div>
+<!-- Question Prompt Container -->
+<div class="flex flex-col space-y-space-sm">
+<p class="font-body-lg text-body-lg text-on-surface font-semibold">
+        Based on the Golden Rule of Domain Reading you just analyzed, who is the authoritative apex owner of this destination URL?
+      </p>
+<!-- Challenge URL Box -->
+<div class="bg-surface-container p-space-md rounded-lg flex items-center gap-space-sm overflow-x-auto">
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0">travel_explore</span>
+<span class="font-code text-code text-on-surface select-all font-medium">https://support.apple.com.recovery-id-verify.co/case/2049182/auth</span>
+</div>
+</div>
+<!-- Options Form -->
+<div class="flex flex-col space-y-space-sm pt-2" id="quiz-options">
+<!-- Option A -->
+<label class="quiz-option cursor-pointer p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex items-start gap-space-sm" data-choice="A">
+<input class="mt-1 text-primary focus:ring-primary accent-primary" name="quiz_target" type="radio" value="A"/>
+<div class="flex flex-col">
+<span class="font-code text-code font-bold text-on-surface">apple.com</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Apple Inc. Customer Care Authority</span>
+</div>
+</label>
+<!-- Option B (Correct) -->
+<label class="quiz-option cursor-pointer p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex items-start gap-space-sm" data-choice="B">
+<input class="mt-1 text-primary focus:ring-primary accent-primary" name="quiz_target" type="radio" value="B"/>
+<div class="flex flex-col">
+<span class="font-code text-code font-bold text-on-surface">recovery-id-verify.co</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">The two labels directly left of the first single forward slash (/)</span>
+</div>
+</label>
+<!-- Option C -->
+<label class="quiz-option cursor-pointer p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex items-start gap-space-sm" data-choice="C">
+<input class="mt-1 text-primary focus:ring-primary accent-primary" name="quiz_target" type="radio" value="C"/>
+<div class="flex flex-col">
+<span class="font-code text-code font-bold text-on-surface">support.apple.com.recovery-id-verify.co</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">The entire composite Fully Qualified Domain Name (FQDN)</span>
+</div>
+</label>
+</div>
+<!-- Submit Action & Result Feedback -->
+<div class="flex flex-col sm:flex-row items-center gap-space-md pt-2">
+<button class="w-full sm:w-auto px-6 py-2.5 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container active:scale-95 transition-all flex items-center justify-center gap-2" id="submit-quiz-btn">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Submit Answer</span>
+</button>
+<span class="font-body-sm text-body-sm text-outline italic" id="quiz-hint">Select an option and submit to evaluate your syntactic parsing.</span>
+</div>
+<!-- Dynamic Feedback Panel (Hidden initially) -->
+<div class="hidden p-space-md rounded-lg transition-all duration-300" id="quiz-feedback">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-[24px]" id="feedback-icon"></span>
+<div class="flex flex-col space-y-1">
+<span class="font-title text-title" id="feedback-title"></span>
+<p class="font-body-sm text-body-sm leading-relaxed" id="feedback-body"></p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // Interactive Token Inspector Logic
+  const tokenData = {
+    protocol: {
+      title: "01 Protocol: Transport Security (https://)",
+      icon: "lock",
+      desc: "Specifies the cryptographic scheme (TLS). While it guarantees transport encryption, it does NOT certify that the host is benign or legitimate."
+    },
+    subdomain: {
+      title: "02 Subdomain: Adversary Mimicry (login.microsoftonline.com.)",
+      icon: "visibility",
+      desc: "Anyone who owns an apex domain can create arbitrary subdomains without restriction. An attacker can create 'login.microsoftonline.com' just as easily as 'test123'."
+    },
+    apex: {
+      title: "03 Apex Domain: True Registered Entity (account-verification-portal)",
+      icon: "gavel",
+      desc: "The critical payload. This label, together with its TLD (.net), forms the legal boundary of domain ownership. Network routing resolves directly to whoever registered this identity."
+    },
+    tld: {
+      title: "04 Top-Level Domain: (.net)",
+      icon: "public",
+      desc: "The registry suffix managed by Verisign. Generic TLDs (.net, .com) or cheap ccTLDs (.top, .co) are frequently purchased with burner pre-paid cards."
+    },
+    path: {
+      title: "05 Path: Imitated Resource (/oauth2/v2.0/authorize)",
+      icon: "folder_open",
+      desc: "Mirrors official Microsoft OAuth authorization endpoints verbatim, so security scanners looking at the URI string alone might falsely match standard SSO patterns."
+    },
+    query: {
+      title: "06 Query Parameters: (?client_id=sec-audit)",
+      icon: "data_object",
+      desc: "Key-value telemetry pairs passed to the attacker's server script, used to identify which targeted victim clicked the tailored phishing lure."
+    }
+  };
+
+  const tokenButtons = document.querySelectorAll('.token-btn');
+  const insightBox = document.getElementById('token-insight-box');
+  const insightTitle = document.getElementById('insight-title');
+  const insightDesc = document.getElementById('insight-desc');
+  const insightIcon = document.getElementById('insight-icon');
+
+  tokenButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tokenButtons.forEach(b => b.classList.remove('ring-2', 'ring-primary', 'bg-surface-container'));
+      btn.classList.add('ring-2', 'ring-primary');
+      
+      const key = btn.getAttribute('data-token');
+      const item = tokenData[key];
+      if (item) {
+        insightTitle.textContent = "Inspecting: " + item.title;
+        insightDesc.innerHTML = item.desc;
+        insightIcon.textContent = item.icon;
+      }
+    });
+  });
+
+  document.getElementById('reset-token-btn').addEventListener('click', () => {
+    tokenButtons.forEach(b => b.classList.remove('ring-2', 'ring-primary'));
+    const apexItem = tokenData.apex;
+    insightTitle.textContent = "Inspecting: " + apexItem.title;
+    insightDesc.innerHTML = apexItem.desc;
+    insightIcon.textContent = apexItem.icon;
+  });
+
+  // Copy URL button
+  const copyBtn = document.getElementById('copy-btn');
+  const copyText = document.getElementById('copy-text');
+  copyBtn.addEventListener('click', () => {
+    const url = document.getElementById('full-url-display').textContent;
+    navigator.clipboard.writeText(url).then(() => {
+      copyText.textContent = "Copied!";
+      setTimeout(() => { copyText.textContent = "Copy URL"; }, 2000);
+    });
+  });
+
+  // Quiz Interaction Logic
+  const submitBtn = document.getElementById('submit-quiz-btn');
+  const feedbackPanel = document.getElementById('quiz-feedback');
+  const feedbackTitle = document.getElementById('feedback-title');
+  const feedbackBody = document.getElementById('feedback-body');
+  const feedbackIcon = document.getElementById('feedback-icon');
+
+  submitBtn.addEventListener('click', () => {
+    const selected = document.querySelector('input[name="quiz_target"]:checked');
+    if (!selected) {
+      alert('Please select an option before submitting.');
+      return;
+    }
+
+    feedbackPanel.classList.remove('hidden', 'bg-tertiary-fixed/40', 'bg-error-container', 'text-on-tertiary-fixed', 'text-on-error-container');
+
+    if (selected.value === 'B') {
+      feedbackPanel.classList.add('bg-tertiary-fixed/60', 'text-on-tertiary-fixed');
+      feedbackIcon.textContent = 'check_circle';
+      feedbackIcon.className = 'material-symbols-outlined text-[24px] text-tertiary';
+      feedbackTitle.textContent = 'Correct Forensic Determination!';
+      feedbackBody.textContent = 'Precisely. Finding the first single forward slash ("/") after https:// and looking immediately to the two labels on its left yields "recovery-id-verify.co". Everything before it ("support.apple.com.") is an adversary-configured subdomain deliberately mimicking Apple Inc.';
+    } else if (selected.value === 'A') {
+      feedbackPanel.classList.add('bg-error-container', 'text-on-error-container');
+      feedbackIcon.textContent = 'cancel';
+      feedbackIcon.className = 'material-symbols-outlined text-[24px] text-error';
+      feedbackTitle.textContent = 'Incorrect: Fallen for the Brand Mimicry Trap';
+      feedbackBody.textContent = 'Although "support.apple.com" appears visually in the URL, it is located more than two labels away from the first single forward slash (/). It is merely a string of subdomains owned and operated by recovery-id-verify.co.';
+    } else {
+      feedbackPanel.classList.add('bg-secondary-fixed/50', 'text-on-secondary-fixed');
+      feedbackIcon.textContent = 'info';
+      feedbackIcon.className = 'material-symbols-outlined text-[24px] text-secondary';
+      feedbackTitle.textContent = 'Imprecise: That is the Full FQDN, Not the Apex Domain';
+      feedbackBody.textContent = 'While that string forms the full Fully Qualified Domain Name (FQDN), the legal ownership and DNS registrar boundary belongs strictly to the apex root domain: "recovery-id-verify.co".';
+    }
+  });
+</script></main></div></body></html>
