@@ -1,7 +1,17 @@
-# PhishGuard
+# 🛡️ PhishGuard
+
+<div align="center">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-PhishGuard is an educational phishing-awareness platform that teaches users how to recognize phishing, analyze suspicious emails and URLs, practice incident-response decisions, and assess their understanding through scenario-based training.
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-B73BFE?style=flat&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
+
+**An advanced, educational phishing-awareness platform designed to train users in threat recognition, digital forensics, and incident response.**
+
+</div>
+
+PhishGuard is a comprehensive educational platform that teaches users how to recognize phishing, analyze suspicious emails and URLs, practice incident-response decisions, and assess their understanding through scenario-based training.
 
 ---
 
@@ -279,6 +289,20 @@ PhishGuard is built as a static Single-Page Application (SPA) and can be hosted 
 
 ---
 
-## License
+## 👨‍💻 Author
+
+**Pranav Ithape**
+- **GitHub:** [@pranav-ithape](https://github.com/pranav-ithape)
+- **Email:** Reach out for collaboration or security inquiries.
+
+---
+
+## ⚖️ Disclaimer
+
+**For Educational Purposes Only.** PhishGuard is built to help individuals and organizations learn about cybersecurity threats. Do not use the techniques or tools discussed here for malicious purposes. The author is not responsible for any misuse of the information provided in this repository.
+
+---
+
+## 📜 License
 
 This project is open-source under the MIT License.
