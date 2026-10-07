@@ -323,39 +323,7 @@ export const ExamplesPage: React.FC = () => {
         })}
       </div>
 
-      {/* Module 06 Completion & Next Navigation */}
-      <div className="rounded-xl border border-outline-variant/60 bg-surface-container-lowest p-space-lg flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
-        <Link to="/learn/social-engineering" className="w-full sm:w-auto">
-          <button className="flex items-center gap-2 px-4 py-2 rounded border border-outline-variant bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors w-full sm:w-auto justify-center cursor-pointer">
-            <span className="material-symbols-outlined text-[16px]">arrow_back</span>
-            <span>Module 05: Psychology</span>
-          </button>
-        </Link>
 
-        <div className="flex items-center gap-3 w-full sm:w-auto">
-          <button
-            onClick={handleToggleComplete}
-            className={`flex items-center justify-center gap-2 px-5 py-2.5 rounded font-label-md text-label-md font-semibold transition-colors shadow-xs w-full sm:w-auto cursor-pointer ${
-              isCompleted
-                ? 'bg-tertiary text-on-tertiary hover:bg-tertiary-container'
-                : 'bg-primary text-on-primary hover:bg-primary-container'
-            }`}
-            title={isCompleted ? 'Click to unmark completion' : 'Click to complete module'}
-          >
-            <span className="material-symbols-outlined text-[16px]">
-              {isCompleted ? 'verified' : 'check_circle'}
-            </span>
-            <span>{isCompleted ? 'Module 06 Completed (Undo)' : 'Complete Module 06'}</span>
-          </button>
-
-          <Link to="/quiz" className="w-full sm:w-auto">
-            <button className="flex items-center justify-center gap-1.5 px-4 py-2.5 rounded border border-primary text-primary hover:bg-primary/10 font-label-md text-label-md font-semibold transition-colors w-full sm:w-auto cursor-pointer">
-              <span>Take Assessment (Mod 07)</span>
-              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-            </button>
-          </Link>
-        </div>
-      </div>
     </div>
   );
 };
