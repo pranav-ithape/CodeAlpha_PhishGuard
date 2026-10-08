@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { ScrollToTop } from './components/common/ScrollToTop';
 import { RootLayout } from './layouts/RootLayout';
 import { DashboardPage } from './pages/DashboardPage';
 import { LearnPage } from './pages/LearnPage';
@@ -14,7 +15,9 @@ import { LandingPage } from './pages/LandingPage';
 
 export function App() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route element={<RootLayout />}>
         {/* Core application routes */}
@@ -40,6 +43,7 @@ export function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
+    </>
   );
 }
 
